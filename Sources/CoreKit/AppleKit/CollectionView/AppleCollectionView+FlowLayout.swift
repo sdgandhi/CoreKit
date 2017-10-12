@@ -7,15 +7,15 @@
 //
 
 #if os(iOS) || os(tvOS) || os(macOS)
-
-public extension AppleCollectionView {
-    /**
-     The flow layout of the collection view
-     */
-    public var flowLayout: AppleCollectionViewFlowLayout? {
-        return self.collectionViewLayout as? AppleCollectionViewFlowLayout
+    
+    public extension AppleCollectionView {
+        /**
+         The flow layout of the collection view
+         */
+        public var flowLayout: AppleCollectionViewFlowLayout? {
+            return self.collectionViewLayout as? AppleCollectionViewFlowLayout
+        }
     }
-}
-
+    
 #endif
 

@@ -35,7 +35,6 @@
 		16D461761F82D2C600B89924 /* StringItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16D461751F82D2C600B89924 /* StringItem.xib */; };
 		16D461781F82D2FA00B89924 /* StringItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16D461771F82D2FA00B89924 /* StringItem.xib */; };
 		16D4617B1F82D32400B89924 /* StringItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16D461791F82D31F00B89924 /* StringItem.xib */; };
-		16D4617C1F82D86100B89924 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16D461311F82CF0500B89924 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -534,7 +533,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16D4617C1F82D86100B89924 /* Info.plist in Resources */,
 				16D4614C1F82CF1900B89924 /* Assets.xcassets in Resources */,
 				16D4614D1F82CF1C00B89924 /* Main.storyboard in Resources */,
 				16D4617B1F82D32400B89924 /* StringItem.xib in Resources */,

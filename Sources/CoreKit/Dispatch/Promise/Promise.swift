@@ -17,7 +17,7 @@ open class Promise<T> {
         case timeout
     }
 
-    public enum State<T> {
+    public indirect enum State<T> {
         
         case pending
         case fulfilled(value: T)

@@ -20,7 +20,10 @@ class ViewController: NSViewController {
         let source = CollectionViewSource(grid: grid)
         let section = CollectionViewSection()
         
-        for i in stride(from: 0, to: 300, by: 1) {
+        section.header = StringData("header")
+        section.footer = StringData("footer")
+        
+        for i in stride(from: 0, to: 100, by: 1) {
             let data = StringData("item \(i)")
             
             section.items.append(data)

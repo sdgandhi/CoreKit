@@ -38,8 +38,15 @@
             return _self
         }
 
-        public static func createFromNib() -> AppleView {
-            return AppleBundle.main.loadNibNamed(self.uniqueIdentifier, owner: nil, options: nil)?.last as! AppleView
+        /**
+         It creates a new view object from a nib file
+         
+         - parameter owner: The owner of the nib 
+         - parameter options: Options for loading the nib
+         - returns: An initialized view object
+         */
+        public static func createFromNib(owner: Any? = nil, options: [AnyHashable: Any]? = nil) -> AppleView {
+            return AppleBundle.main.loadNibNamed(String(describing: self), owner: owner, options: options)?.last as! AppleView
         }
 
     }

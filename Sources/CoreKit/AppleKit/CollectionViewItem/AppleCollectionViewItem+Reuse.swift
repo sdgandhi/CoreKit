@@ -7,138 +7,114 @@
 //
 
 
-#if os(iOS) || os(tvOS) || os(macOS)
-    
-    #if os(macOS)
-        import AppKit
-    #endif
-        
-    import Foundation.NSIndexPath
+#if os(macOS) || os(iOS) || os(tvOS)
 
-//    alternative solution for cell registration... worth to consider because of the type casts
-//    public protocol AppleCollectionViewReusableViewItem {}
-//
-//    extension AppleCollectionViewItem: AppleCollectionViewReusableViewItem {}
-//
-//    class MyItem: AppleCollectionViewItem {
-//
-//    }
-//
-//    public extension AppleCollectionView {
-//
-//        public func registerReusableItem<T: AppleCollectionViewItem>(_: T.Type) where T: AppleCollectionViewReusableViewItem {
-//            if let nib = T.nib {
-//                return self.register(nib, forCellWithReuseIdentifier: T.uniqueIdentifier)
-//            }
-//            self.register(T.self, forCellWithReuseIdentifier: T.uniqueIdentifier)
-//        }
-//
-//        public func test() {
-//
-//            AppleCollectionView().registerReusableItem(MyItem.self)
-//        }
-//    }
-    
-    
+    /**
+     Reuse identifier shorthand
+     */
     public extension AppleCollectionViewItem {
-        
-        public static func register(allKindsFor collectionView: AppleCollectionView) {
-            self.register(for: collectionView)
 
-            self.register(collectionView, kind: AppleCollectionElementKindSectionHeader)
-            self.register(collectionView, kind: AppleCollectionElementKindSectionFooter)
+        public static var reuseIdentifier: AppleCollectionViewItem.Identifier.RawValue {
+            return AppleCollectionViewItem.Identifier(self).rawValue
         }
     }
 
+    /**
+     Cells
+     */
     public extension AppleCollectionViewItem {
 
         public static func register(nibFor collectionView: AppleCollectionView) {
-            #if os(iOS) || os(tvOS)
-                collectionView.register(self.nib, forCellWithReuseIdentifier: self.uniqueIdentifier)
-            #elseif os(macOS)
-                collectionView.register(self.nib, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: self.uniqueIdentifier))
+            #if os(macOS)
+                collectionView.register(self.nib, forItemWithIdentifier: self.reuseIdentifier)
+            #else
+                collectionView.register(self.nib, forCellWithReuseIdentifier: self.reuseIdentifier)
             #endif
         }
         
         public static func register(classFor collectionView: AppleCollectionView) {
-            #if os(iOS) || os(tvOS)
-                collectionView.register(self, forCellWithReuseIdentifier: self.uniqueIdentifier)
-            #elseif os(macOS)
-                collectionView.register(self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: self.uniqueIdentifier))
+            #if os(macOS)
+                collectionView.register(self, forItemWithIdentifier: self.reuseIdentifier)
+            #else
+                collectionView.register(self, forCellWithReuseIdentifier: self.reuseIdentifier)
             #endif
         }
 
-        public static func register(for collectionView: AppleCollectionView) {
+        public static func register(itemFor collectionView: AppleCollectionView) {
             if self.nib != nil {
                 return self.register(nibFor: collectionView)
             }
             self.register(classFor: collectionView)
         }
         
-        public static func reuse(_ collectionView: AppleCollectionView, indexPath: IndexPath) -> AppleCollectionViewItem {
-            #if os(iOS) || os(tvOS)
-                return collectionView.dequeueReusableCell(withReuseIdentifier: self.uniqueIdentifier, for: indexPath)
-            #elseif os(macOS)
-                return collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: self.uniqueIdentifier), for: indexPath)
+        public static func reuse(_ collectionView: AppleCollectionView, indexPath: AppleIndexPath) -> AppleCollectionViewItem {
+            #if os(macOS)
+                return collectionView.makeItem(withIdentifier: self.reuseIdentifier, for: indexPath)
+            #else
+                return collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath)
             #endif
         }
         
     }
     
-    
+    /**
+     Supplementary views
+     */
     public extension AppleCollectionViewItem {
-        #if os(macOS)
-        private static func _register(_ collectionView: AppleCollectionView, kind: String) {
         
-        collectionView.register(AppleView.self, forSupplementaryViewOfKind: NSCollectionView.SupplementaryElementKind(rawValue: kind),
-        withIdentifier: NSUserInterfaceItemIdentifier(rawValue: self.uniqueIdentifier))
-        }
-        #endif
-        
-        public static func registerNib(_ collectionView: AppleCollectionView, kind: String) {
-            #if os(iOS) || os(tvOS)
-                collectionView.register(self.nib, forSupplementaryViewOfKind: kind,
-                                        withReuseIdentifier: self.uniqueIdentifier)
-            #elseif os(macOS)
-                self._register(collectionView, kind: kind)
-                collectionView.register(self.nib, forSupplementaryViewOfKind: NSCollectionView.SupplementaryElementKind(rawValue: kind),
-                                        withIdentifier: NSUserInterfaceItemIdentifier(rawValue: self.uniqueIdentifier))
+        /**
+         Register a nib for reuse as a supplementary element
+         
+         - parameter _ collectionView: A collection view to regsiter the view
+         - parameter kind: The view type for reuse
+         */
+        public static func register(nibFor collectionView: AppleCollectionView, kind: AppleCollectionViewItem.Kind) {
+            #if os(macOS)
+                collectionView.register(self.nib, forSupplementaryViewOfKind: kind.rawValue, withIdentifier: self.reuseIdentifier)
+            #else
+                collectionView.register(self.nib, forSupplementaryViewOfKind: kind.rawValue, withReuseIdentifier: self.reuseIdentifier)
             #endif
         }
         
-        public static func registerClass(_ collectionView: AppleCollectionView, kind: String) {
-            #if os(iOS) || os(tvOS)
-                collectionView.register(self, forSupplementaryViewOfKind: kind,
-                                        withReuseIdentifier: self.uniqueIdentifier)
-            #elseif os(macOS)
-                self._register(collectionView, kind: kind)
-                collectionView.register(self, forSupplementaryViewOfKind: NSCollectionView.SupplementaryElementKind(rawValue: kind),
-                                        withIdentifier: NSUserInterfaceItemIdentifier(rawValue: self.uniqueIdentifier))
+        /**
+         Register a class for reuse as a supplementary element
+         
+         - parameter _ collectionView: A collection view to regsiter the view
+         - parameter kind: The view type for reuse
+         */
+        public static func register(classFor collectionView: AppleCollectionView, kind: AppleCollectionViewItem.Kind) {
+            #if os(macOS)
+                collectionView.register(self, forSupplementaryViewOfKind: kind.rawValue, withIdentifier: self.reuseIdentifier)
+            #else
+                collectionView.register(self, forSupplementaryViewOfKind: kind.rawValue, withReuseIdentifier: self.reuseIdentifier)
             #endif
         }
         
-        public static func register(_ collectionView: AppleCollectionView, kind: String) {
+        /**
+         Register a nib or a class for reuse as a supplementary element
+         
+         - parameter _ collectionView: A collection view to regsiter the view
+         - parameter kind: The view type for reuse
+         */
+        public static func register(itemFor collectionView: AppleCollectionView, kind: AppleCollectionViewItem.Kind) {
             if self.nib != nil {
-                return self.registerNib(collectionView, kind: kind)
+                return self.register(nibFor: collectionView, kind: kind)
             }
-            self.registerClass(collectionView, kind: kind)
+            self.register(classFor: collectionView, kind: kind)
         }
 
-        public static func reuse(_ collectionView: AppleCollectionView,
-                                indexPath: IndexPath,
-                                kind: String) -> AppleCollectionViewReusableView
-        {
-            #if os(iOS) || os(tvOS)
-                return collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                       withReuseIdentifier: self.uniqueIdentifier,
-                                                                       for: indexPath)
-            #elseif os(macOS)
+        /**
+         Reuse a type for a supplementary element kind
+         
+         - parameter _ collectionView: A collection view to regsiter the view
+         - parameter kind: The view type for reuse
+         */
+        public static func reuse(_ collectionView: AppleCollectionView, indexPath: AppleIndexPath, kind: AppleCollectionViewItem.Kind) -> AppleCollectionViewReusableView {
+            #if os(macOS)
+                //let wrapper = self.init(nib: AppleNib.Identifier(self)) //unfortunately this is not possible right now...
+                let wrapper = self.init(nibName: AppleNib.Identifier(self).rawValue, bundle: .main)
                 
-                let wrapper = self.init(nibName: NSNib.Name(rawValue: self.uniqueIdentifier), bundle: .main)
-                
-                let view = collectionView.makeSupplementaryView(ofKind: NSCollectionView.SupplementaryElementKind(rawValue: kind),
-                                                                withIdentifier: NSUserInterfaceItemIdentifier(rawValue: self.uniqueIdentifier),
-                                                                for: indexPath)
+                let view = collectionView.makeSupplementaryView(ofKind: kind.rawValue, withIdentifier: self.reuseIdentifier, for: indexPath)
                 
                 view.subviews.forEach { $0.removeFromSuperview() }
                 
@@ -147,8 +123,10 @@
                 view.addSubview(wrapper.view)
                 
                 return wrapper
+            #else
+                return collectionView.dequeueReusableSupplementaryView(ofKind: kind.rawValue, withReuseIdentifier: self.reuseIdentifier, for: indexPath)
             #endif
         }
-        
     }
+
 #endif

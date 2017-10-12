@@ -15,9 +15,7 @@ public extension String {
      - returns: The initials from the string
      */
     public var initials: String {
-        return self.split(separator: " ").map { word in
-            return String(word[..<word.index(word.startIndex, offsetBy: 1)])
-        }.joined()
+        return self.split(separator: " ").map { String($0.first!) }.joined()
     }
     
 }

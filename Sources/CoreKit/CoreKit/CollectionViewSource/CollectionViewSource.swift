@@ -16,7 +16,6 @@
         private var indexPathSelected = false
 
         open var selectionThreshold: Double = 0.5
-        open var itemsToRegister = [CollectionViewItem.self]
         open var grid: Grid
         open var sections: [CollectionViewSection] = []
         open var callback: CollectionViewCallback?
@@ -55,20 +54,16 @@
     public extension CollectionViewSource {
         
         public func register(itemsFor collectionView: CollectionView) {
-            
-            for view in self.itemsToRegister {
-                view.register(allKindsFor: collectionView)
-            }
-            
+
             for sectionData in self.sections {
                 if let view = sectionData.header?.item {
-                    view.register(allKindsFor: collectionView)
+                    view.register(itemFor: collectionView, kind: .header)
                 }
                 if let view = sectionData.footer?.item {
-                    view.register(allKindsFor: collectionView)
+                    view.register(itemFor: collectionView, kind: .footer)
                 }
                 for view in sectionData.items.map({ $0.item }) {
-                    view.register(allKindsFor: collectionView)
+                    view.register(itemFor: collectionView)
                 }
             }
         }
@@ -101,6 +96,7 @@
             return self.collectionView(collectionView, itemForIndexPath: indexPath)
         }
         #elseif os(macOS)
+        
         public func collectionView(_ collectionView: AppleCollectionView, itemForRepresentedObjectAt indexPath: AppleIndexPath) -> AppleCollectionViewItem {
             return self.collectionView(collectionView, itemForIndexPath: indexPath)
         }
@@ -117,7 +113,7 @@
                 guard
                     let section = section,
                     let data = section.header,
-                    let cell = data.item.reuse(collectionView, indexPath: indexPath, kind: kind) as? CollectionViewItem
+                    let cell = data.item.reuse(collectionView, indexPath: indexPath, kind: .header) as? CollectionViewItem
                 else {
                     return CollectionViewItem.reuse(collectionView, indexPath: indexPath)
                 }
@@ -129,7 +125,7 @@
                 guard
                     let section = section,
                     let data = section.footer,
-                    let cell = data.item.reuse(collectionView, indexPath: indexPath, kind: kind) as? CollectionViewItem
+                    let cell = data.item.reuse(collectionView, indexPath: indexPath, kind: .footer) as? CollectionViewItem
                 else {
                     return CollectionViewItem.reuse(collectionView, indexPath: indexPath)
                 }
@@ -137,7 +133,7 @@
                 return cell
             }
 
-            return CollectionViewItem.reuse(collectionView, indexPath: indexPath, kind: kind)
+            return CollectionViewItem.reuse(collectionView, indexPath: indexPath, kind: .header)
         }
         
         #if os(iOS) || os(tvOS)
@@ -149,12 +145,14 @@
         }
         #elseif os(macOS)
         public func collectionView(_ collectionView: AppleCollectionView,
-                                   viewForSupplementaryElementOfKind kind: String,
+                                   viewForSupplementaryElementOfKind kind: AppleCollectionView.SupplementaryElementKind,
                                    at indexPath: AppleIndexPath) -> AppleView
         {
-            let reusedView = self._collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
+            let reusedView = self._collectionView(collectionView, viewForSupplementaryElementOfKind: kind.rawValue, at: indexPath)
+
             return reusedView.view.superview!
         }
+
         #endif
         
         public func collectionView(_ collectionView: AppleCollectionView,

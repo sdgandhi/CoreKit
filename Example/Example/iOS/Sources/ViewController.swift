@@ -33,17 +33,19 @@ class ViewController: UIViewController {
         let grid = Grid(view: self.collectionView)
         let source = CollectionViewSource(grid: grid)
         let section = CollectionViewSection()
+        
+//        self.collectionView.flowLayout?.sectionHeadersPinToVisibleBounds = true
+        section.header = StringData("header")
+        section.footer = StringData("footer")
 
-        for i in stride(from: 0, to: 300, by: 1) {
+        for i in stride(from: 0, to: 100, by: 1) {
             let data = StringData("item \(i)")
 
             section.items.append(data)
         }
 
         source.sections.append(section)
-
         self.collectionView.source = source
-        
         self.collectionView.reloadData()
     }
 

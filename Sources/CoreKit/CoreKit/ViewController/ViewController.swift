@@ -30,9 +30,9 @@
         
         #if os(iOS) || os(tvOS)
         override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: AppleBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+            super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.initialize()
+            self.initialize()
         }
         #endif
         #if os(macOS)

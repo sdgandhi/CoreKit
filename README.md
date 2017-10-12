@@ -1,4 +1,3 @@
-
 # CoreKit
 
 Ultimate cross platform framework to create appleOS apps.
@@ -13,16 +12,17 @@ Ultimate cross platform framework to create appleOS apps.
 * Timer+block
 * Server + Request + Response complete refactor?!?
 * SKCircularProgressView not working on macOS (check uibezierpath)
-* AppleImage+Vector is not supported currently on macOS
-* AppleImage+Effects is not supported currently on macOS
+* AppleImage+Vector is not supported on macOS
+* AppleImage+Effects is not supported on macOS
 * AppleViewController+Alert check & move extension to AppleAlertControllerAlert
 * AppleViewController extensions are iOS + tvOS only right now
 * AppleFont+Family available fonts can be refactored with the 2 functions above... flatMap ftw!
 * Explicit scrollView delegate for CollectionView
-* Fix collection views headers / footers for macOS
+* Rework collectionViewSource
 * Better cross platform UI/App-Kit typealiases (label, etc.)
 * Write more tests
 * Write proper docs
+
 
 Enjoy. ;)
 
