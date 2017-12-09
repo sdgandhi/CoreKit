@@ -1,5 +1,5 @@
 //
-//  Array+Last_Tests
+//  Array+LastTests
 //  CoreKit-Tests
 //
 //  Created by Tibor Bödecs on 2017. 09. 26..
@@ -9,9 +9,8 @@
 import XCTest
 @testable import CoreKit
 
+class ArrayLastTests: XCTestCase {
 
-class ArrayLast_Tests: XCTestCase {
-    
     func test() {
         let sample1: [String] = ["a", "b", "c"]
         let sample2: [String] = []

@@ -6,26 +6,23 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-
-
 public protocol StateMachineDelegateProtocol: class {
-    associatedtype StateType : Hashable
-    
+    associatedtype StateType: Hashable
+
     func didTransition(from: StateType, to: StateType)
 }
-
 
 public class StateMachine <P: StateMachineDelegateProtocol> {
 
     private unowned let delegate: P
     private let validTransitions: [P.StateType: [P.StateType]]
-    
+
     private var _state: P.StateType {
-        didSet{
-            self.delegate.didTransition(from: oldValue, to:_state)
+        didSet {
+            self.delegate.didTransition(from: oldValue, to: _state)
         }
     }
-    
+
     public var state: P.StateType {
         get {
             return self._state
@@ -34,14 +31,14 @@ public class StateMachine <P: StateMachineDelegateProtocol> {
             self.attemptTransition(to: newValue)
         }
     }
-    
+
     public init(initialState: P.StateType, delegate: P, validTransitions: [P.StateType: [P.StateType]]) {
         self.validTransitions = validTransitions
-        self._state           = initialState
-        self.delegate         = delegate
+        self._state = initialState
+        self.delegate = delegate
     }
-    
-    private func attemptTransition(to: P.StateType){
+
+    private func attemptTransition(to: P.StateType) {
         guard
             let validNexts = self.validTransitions[self._state], validNexts.contains(to)
             else

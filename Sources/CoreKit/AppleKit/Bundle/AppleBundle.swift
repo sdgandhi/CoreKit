@@ -7,14 +7,9 @@
 //
 
 #if os(iOS) || os(tvOS) || os(macOS) || os(watchOS)
-    
+
     import Foundation.NSBundle
-    
+
     public typealias AppleBundle = Bundle
-    
+
 #endif
-
-
-
-
-

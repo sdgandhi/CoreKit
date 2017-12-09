@@ -12,12 +12,12 @@
  This protocol allows enumerations to get all the enum values
  */
 public protocol EnumCollection: Hashable {
-    
+
     /**
      Returns a sequence from the enumerations
      */
     static func cases() -> AnySequence<Self>
-    
+
     /**
      Returns all the values of the enum
      */
@@ -28,7 +28,7 @@ public protocol EnumCollection: Hashable {
  EnumCollection protocol default implementation
  */
 public extension EnumCollection {
-    
+
     /**
      Returns a sequence from the enumerations
      */
@@ -36,7 +36,9 @@ public extension EnumCollection {
         return AnySequence { () -> AnyIterator<Self> in
             var raw = 0
             return AnyIterator {
-                let current: Self = withUnsafePointer(to: &raw) { $0.withMemoryRebound(to: self, capacity: 1) { $0.pointee } }
+                let current: Self = withUnsafePointer(to: &raw) {
+                    $0.withMemoryRebound(to: self, capacity: 1) { $0.pointee }
+                }
                 guard current.hashValue == raw else {
                     return nil
                 }
@@ -45,12 +47,12 @@ public extension EnumCollection {
             }
         }
     }
-    
+
     /**
      Returns all the values of the enum
      */
     public static var allValues: [Self] {
         return Array(Self.cases())
     }
-    
+
 }

@@ -6,16 +6,16 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-import Foundation.NSThread
+import Foundation
 
 
 public extension Thread {
-    
+
     /**
      Unknown thread number constant
      */
     public static var unknownThreadNumber: Int { return -1 }
-    
+
     /**
      Number of the thread.
      */
@@ -48,7 +48,7 @@ public extension Thread {
             return String(format: "%p", Thread.current)
         #endif
         #if os(Linux)
-            return String(format: "%p", Thread.current as! CVarArg)
+            return String(format: "%p", Thread.current as! CVarArg)  // swiftlint:disable:this force_cast
         #endif
     }
 
@@ -57,7 +57,7 @@ public extension Thread {
         for pair in pairs {
             let components = pair.components(separatedBy: "=")
             if
-                let key   = components.first, key.range(of: keyName) != nil,
+                let key = components.first, key.range(of: keyName) != nil,
                 let value = components.last
             {
                 var characters = CharacterSet.whitespaces
@@ -68,4 +68,3 @@ public extension Thread {
         return nil
     }
 }
-

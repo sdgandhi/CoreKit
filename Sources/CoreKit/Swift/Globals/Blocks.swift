@@ -6,7 +6,6 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-
 /**
  Generic void block
  */
@@ -21,5 +20,3 @@ public typealias ValueBlock<T> = (T) -> Void
  Generic error block
  */
 public typealias ErrorBlock = (Error) -> Void
-
-

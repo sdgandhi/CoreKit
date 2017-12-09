@@ -7,25 +7,28 @@
 //
 
 #if os(iOS) || os(tvOS)
-    
+
     import CoreGraphics
-    
+
     public extension AppleViewController {
-        
-        private static var DimTag: Int = 6580589 //dim string in decimal
-        
-        public func dim(enabled: Bool, color: AppleColor = AppleColor.black, alpha: CGFloat = 0.25, speed: Double = 0.25) {
+
+        private static var DimTag: Int = 6_580_589 //dim string in decimal
+
+        public func dim(enabled: Bool,
+                        color: AppleColor = .black,
+                        alpha: CGFloat = 0.25,
+                        speed: Double = 0.25) {
             if enabled {
                 guard let view = self.view.subviews.last, view.tag != AppleViewController.DimTag else {
                     return
                 }
-                let dimView             = AppleView.create()
-                dimView.tag             = AppleViewController.DimTag
+                let dimView = AppleView.create()
+                dimView.tag = AppleViewController.DimTag
                 dimView.backgroundColor = color
-                dimView.alpha           = 0.0
+                dimView.alpha = 0.0
                 self.view.addSubview(dimView)
                 dimView.fillAnchors(toView: self.view)
-                
+
                 AppleView.animate(withDuration: speed) {
                     dimView.alpha = alpha
                 }
@@ -34,15 +37,15 @@
                 guard let view = self.view.subviews.last, view.tag == AppleViewController.DimTag else {
                     return
                 }
-                AppleView.animate(withDuration: speed, animations: {
-                    view.alpha = alpha
-                }, completion: { complete in
+                AppleView.animate(withDuration: speed,
+                                  animations: {
+                                    view.alpha = alpha
+                }, completion: { _ in
                     view.removeFromSuperview()
                 })
             }
         }
-        
-    }
-    
-#endif
 
+    }
+
+#endif

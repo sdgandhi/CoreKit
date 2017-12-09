@@ -7,10 +7,9 @@
 //
 
 #if os(macOS)
-    
-    import AppKit.NSPageController
-    
-    public typealias ApplePageViewController = NSPageController
-    
-#endif
 
+    import AppKit.NSPageController
+
+    public typealias ApplePageViewController = NSPageController
+
+#endif

@@ -9,9 +9,9 @@
 #if os(iOS) || os(tvOS) || os(macOS)
 
     import CoreGraphics
-    
+
     public extension AppleLayoutConstraint {
-        
+
         func setMultiplier(multiplier: CGFloat) {
             let copy = AppleLayoutConstraint(
                 item: self.firstItem as Any,
@@ -22,15 +22,14 @@
                 multiplier: multiplier,
                 constant: self.constant
             )
-            
+
             copy.priority = self.priority
             copy.shouldBeArchived = self.shouldBeArchived
             copy.identifier = self.identifier
             copy.isActive = self.isActive
-            
+
             AppleLayoutConstraint.deactivate([self])
             AppleLayoutConstraint.activate([copy])
         }
     }
 #endif
-

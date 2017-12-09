@@ -7,12 +7,9 @@
 //
 
 #if os(iOS) || os(tvOS)
-    
+
     import UIKit.UIPageViewController
-    
+
     public typealias ApplePageViewController = UIPageViewController
-    
+
 #endif
-
-
-

@@ -6,7 +6,6 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-
 #if os(iOS) || os(tvOS)
 
     import CoreGraphics
@@ -17,10 +16,10 @@
         public func height(ofString string: String, constrainedToWidth width: CGFloat) -> CGFloat {
             let attr = [NSAttributedStringKey.font: self]
             let size = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
-
-            return string.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attr, context: nil).size.height
+            let rect = string.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attr, context: nil)
+            return rect.size.height
         }
-        
+
     }
-    
+
 #endif

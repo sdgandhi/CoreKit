@@ -6,17 +6,18 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-import Foundation.NSOperation
+import Foundation
 
 
 public extension Operation {
-    
+
     /**
      Returns an empty operation with a completion handler to aggregate operations
-    
+
      - returns: The operation
      */
     public static func aggregate(completion: @escaping VoidBlock) -> Operation {
         return BlockOperation(block: {}, completion: completion)
     }
 }
+

@@ -7,7 +7,7 @@
 //
 
 #if os(iOS) || os(tvOS) || os(macOS)
-    
+
     public extension AppleCollectionView {
         /**
          The flow layout of the collection view
@@ -16,6 +16,5 @@
             return self.collectionViewLayout as? AppleCollectionViewFlowLayout
         }
     }
-    
-#endif
 
+#endif

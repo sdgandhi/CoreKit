@@ -6,13 +6,13 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-extension String {
-    
+
+public extension String {
+
     /**
      Returns the first word of the string
      */
-    var firstWord: String? {
+    public var firstWord: String? {
         return self.split(separator: " ").map { String($0) }.first
     }
 }
-

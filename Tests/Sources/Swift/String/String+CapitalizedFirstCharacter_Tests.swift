@@ -1,5 +1,5 @@
 //
-//  String+CapitalizedFirstCharacter_Tests.swift
+//  String+CapitalizedFirstCharacterTests.swift
 //  CoreKit
 //
 //  Created by Tibor Bödecs on 2017. 09. 27..
@@ -9,11 +9,10 @@
 import XCTest
 @testable import CoreKit
 
+class StringCapitalizedFirstCharacterTests: XCTestCase {
 
-class StringCapitalizedFirstCharacter_Tests: XCTestCase {
-    
     func test() {
-        
+
         let str1 = "árvíztűrő tükörfúrógép"
         let str2 = "hello"
         let str3 = ""
@@ -23,5 +22,3 @@ class StringCapitalizedFirstCharacter_Tests: XCTestCase {
         XCTAssert(str3.capitalizedFirstCharacter == "")
     }
 }
-
-

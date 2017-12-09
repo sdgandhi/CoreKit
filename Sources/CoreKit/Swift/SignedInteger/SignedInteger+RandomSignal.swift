@@ -6,8 +6,6 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-import Darwin
-
 
 public extension SignedInteger {
 
@@ -15,10 +13,6 @@ public extension SignedInteger {
      Randomly returns either 1 or -1
      */
     public static var randomSignal: Self {
-        get {
-            return ((arc4random_uniform(2) == 0) ? 1 : -1) as! Self
-        }
+        return ((rndm(to: 1) == 1) ? 1 : -1) as! Self // swiftlint:disable:this force_cast
     }
 }
-
-

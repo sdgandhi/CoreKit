@@ -7,24 +7,23 @@
 //
 
 #if os(iOS) || os(tvOS) || os(watchOS) || os(macOS)
-    
+
     import CoreGraphics
 
-#if os(macOS)
+    #if os(macOS)
     import AppKit.NSFontManager
-#endif
-    
+    #endif
 
     public extension AppleFont {
-        
+
         // -
         // check for em details:
         // http://websemantics.co.uk/resources/font_size_conversion_chart/
         // -
-        
+
         public func em(scale: CGFloat) -> AppleFont {
             let newSize = self.pointSize * scale
-            
+
             #if os(iOS) || os(tvOS) || os(watchOS)
                 return self.withSize(newSize)
             #endif
@@ -32,7 +31,7 @@
                 return NSFontManager.shared.convert(self, toSize: newSize)
             #endif
         }
-        
+
         public var em_0_5: AppleFont { return self.em(scale: 0.5) }
         public var em_0_55: AppleFont { return self.em(scale: 0.55) }
         public var em_0_625: AppleFont { return self.em(scale: 0.625) }
@@ -63,5 +62,5 @@
         public var em_4: AppleFont { return self.em(scale: 4) }
         public var em_5: AppleFont { return self.em(scale: 5) }
     }
-    
+
 #endif

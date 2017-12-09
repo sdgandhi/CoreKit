@@ -11,7 +11,6 @@
 import CoreGraphics.CGGeometry
 import UIKit.UIGraphics
 
-
 public extension AppleImage {
 
     public static func vectorImage(named: String, _ scale: Int = 32) -> AppleImage? {
@@ -26,25 +25,12 @@ public extension AppleImage {
         {
             return nil
         }
-        
+
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         let page = pdf.page(at: 1)
         page?.drawContextIn(rect: CGRect(origin: .zero, size: size))
         return UIGraphicsGetImageFromCurrentImageContext()
     }
-    
+
 }
 #endif
-
-
-
-
-
-
-
-
-
-
-
-
-

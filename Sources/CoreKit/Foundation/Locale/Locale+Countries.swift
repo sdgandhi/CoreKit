@@ -6,20 +6,21 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-import Foundation.NSLocale
+import Foundation
 
 
 public extension Locale {
-    
+
     /**
      Returns all the countries with the country codes
-     
+
      - returns: Array of country tuples
      */
     public static var countries: [(code: String, name: String)] {
         var locales = [(code: String, name: String)]()
 
         for regionCode in Locale.isoRegionCodes {
+            // swiftlint:disable:next force_unwrapping
             let name = Locale.current.localizedString(forRegionCode: regionCode)!
             let code = regionCode
             let locale = (code: code, name: name)

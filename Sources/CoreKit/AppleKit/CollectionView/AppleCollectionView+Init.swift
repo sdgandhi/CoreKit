@@ -6,11 +6,10 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-
 #if os(iOS) || os(tvOS)
-    
+
     public extension AppleCollectionView {
-    
+
         /**
          Initializes a CollectionView object with a frame zero, autolayout enabled
          
@@ -19,11 +18,9 @@
          */
         public convenience init(layout: AppleCollectionViewLayout = AppleCollectionViewFlowLayout(),
                                 autolayout: Bool = true,
-                                backgroundColor: AppleColor = .clear)
-        {
+                                backgroundColor: AppleColor = .clear) {
             self.init(frame: .zero, collectionViewLayout: layout)
-
-            self.translatesAutoresizingMaskIntoConstraints = autolayout
+            self.translatesAutoresizingMaskIntoConstraints = !autolayout
             self.backgroundColor = backgroundColor
         }
     }

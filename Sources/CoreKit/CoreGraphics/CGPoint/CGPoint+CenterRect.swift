@@ -6,18 +6,23 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-import CoreGraphics.CGGeometry
+#if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
 
+    import CoreGraphics.CGGeometry
 
-public extension CGPoint {
-    
-    /**
-     Creates a rectange with a given size from the center of the point
-     
-     - parameter size: The size of the rectange
-     - returns: The rectange centered to the point
-     */
-    public func centerRect(size: CGSize) -> CGRect {
-        return CGRect(x: self.x - size.width / 2.0, y: self.y - size.height / 2.0, width: size.width, height: size.height)
+    public extension CGPoint {
+
+        /**
+         Creates a rectange with a given size from the center of the point
+         
+         - parameter size: The size of the rectange
+         - returns: The rectange centered to the point
+         */
+        public func centerRect(size: CGSize) -> CGRect {
+            return CGRect(x: self.x - size.width / 2.0,
+                          y: self.y - size.height / 2.0,
+                          width: size.width,
+                          height: size.height)
+        }
     }
-}
+#endif

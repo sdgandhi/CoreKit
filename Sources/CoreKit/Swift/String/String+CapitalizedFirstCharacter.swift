@@ -7,11 +7,11 @@
 //
 
 
-extension String {
-    
+public extension String {
+
     /**
      Converts the first letter of the string to an upper case letter
-     
+
      - returns: The string with a capitalized first letter
      */
     public var capitalizedFirstCharacter: String {
@@ -24,5 +24,5 @@ extension String {
         }
         return self.capitalized
     }
-    
+
 }

@@ -7,13 +7,9 @@
 //
 
 #if os(iOS) || os(tvOS) || os(macOS) || os(watchOS)
-    
+
     import Foundation.NSCoder
 
     public typealias AppleCoder = NSCoder
-    
+
 #endif
-
-
-
-

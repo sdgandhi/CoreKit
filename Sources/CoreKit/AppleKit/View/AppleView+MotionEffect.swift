@@ -11,9 +11,8 @@
     import CoreGraphics
     import UIKit.UIMotionEffect
 
-    
     public extension AppleView {
-    
+
         /**
          Creates an x and y motion for the view
          
@@ -30,13 +29,12 @@
             let yAxis = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
             yAxis.minimumRelativeValue = min
             yAxis.maximumRelativeValue = max
-            
+
             let group = UIMotionEffectGroup()
             group.motionEffects = [xAxis, yAxis]
-            
+
             self.addMotionEffect(group)
         }
     }
-
 
 #endif

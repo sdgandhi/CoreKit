@@ -7,7 +7,7 @@
 //
 
 #if os(iOS) || os(tvOS)
-    
+
     public extension AppleViewController {
         /**
          Adds a view controller as a child
@@ -22,7 +22,7 @@
             view.addSubview(viewController.view)
             viewController.didMove(toParentViewController: self)
         }
-        
+
         /**
          Removes a view controller from the hierarchy
          */
@@ -31,7 +31,7 @@
             self.view.removeFromSuperview()
             self.removeFromParentViewController()
         }
-        
+
 }
-    
+
 #endif

@@ -7,13 +7,9 @@
 //
 
 #if os(iOS) || os(tvOS)
-    
+
     import UIKit.UINavigationController
-    
+
     public typealias AppleNavigationController = UINavigationController
-    
+
 #endif
-
-
-
-

@@ -9,7 +9,7 @@
 #if os(macOS) || os(iOS) || os(tvOS)
 
     public extension AppleCollectionView {
-        
+
         /**
          Register a collection view item for reuse
          
@@ -18,29 +18,29 @@
         public func register<T: AppleCollectionViewItem>(reusableItem: T.Type) {
             T.register(itemFor: self)
         }
-        
+
         /**
          Reuse a generic collection view item
          
          Example: collectionView.dequeue(indexPath: indexPath) as MyItem
          */
         func dequeue<T: AppleCollectionViewItem>(indexPath: AppleIndexPath) -> T {
-            return T.reuse(self, indexPath: indexPath) as! T
+            return T.reuse(self, indexPath: indexPath) as! T // swiftlint:disable:this force_cast
         }
-        
+
         /**
          Register a collection view item for reuse with a kind
          */
         public func register<T: AppleCollectionViewItem>(reusableItem: T.Type, kind: AppleCollectionViewItem.Kind) {
             T.register(itemFor: self, kind: kind)
         }
-        
+
         /**
          Reuse a generic collection view item with a kind
          */
         func dequeue<T: AppleCollectionViewItem>(indexPath: AppleIndexPath, kind: AppleCollectionViewItem.Kind) -> T {
-            return T.reuse(self, indexPath: indexPath, kind: kind) as! T
+            return T.reuse(self, indexPath: indexPath, kind: kind) as! T // swiftlint:disable:this force_cast
         }
     }
-    
+
 #endif

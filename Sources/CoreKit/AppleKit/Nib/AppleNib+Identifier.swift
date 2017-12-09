@@ -7,37 +7,39 @@
 //
 
 #if os(macOS) || os(iOS) || os(tvOS)
- 
+
     public extension AppleNib {
-        
+
         public enum Identifier: RawRepresentable {
             case custom(RawValue)
-            
+
             #if os(macOS)
             public typealias RawValue = AppleNib.Name
             #else
             public typealias RawValue = String
             #endif
-            
+
             public init(_ object: UniqueIdentifier.Type) {
                 #if os(macOS)
+                    // swiftlint:disable:next force_unwrapping
                     self.init(rawValue: AppleNib.Name(rawValue: object.uniqueIdentifier))!
                 #else
+                    // swiftlint:disable:next force_unwrapping
                     self.init(rawValue: object.uniqueIdentifier)!
                 #endif
             }
-            
+
             public init?(rawValue: RawValue) {
                 self = .custom(rawValue)
             }
-            
+
             public var rawValue: RawValue {
                 switch self {
-                case .custom(let object): return object
+                case .custom(let object):
+                    return object
                 }
             }
         }
     }
 
 #endif
-

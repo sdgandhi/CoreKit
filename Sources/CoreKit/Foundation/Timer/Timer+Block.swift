@@ -6,26 +6,32 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-import Foundation.NSTimer
+#if os(iOS) || os(tvOS) || os(macOS) || os(watchOS)
 
+    import Foundation.NSTimer
 
-public extension Timer {
-    
-//    public static func run() {
-    
-//    Timer.scheduledTimer(timeInterval: 1, target: BlockOperation {
-//    // ...
-//    }, selector: #selector(Operation.main), userInfo: nil, repeats: false)
-//
-////        Timer(timeInterval: 1, repeats: true) { timer in
-////
-////        }
-//
-//        Timer.scheduledTimerWithTimeInterval(1,
-//                                               target: NSBlockOperation(block: {...}),
-//                                               selector: #selector(Operation.main),
-//                                               userInfo: nil,
-//                                               repeats: true)
-//    }
-}
+    public extension Timer {
 
+        @discardableResult
+        public static func scheduled(interval: TimeInterval, repeats: Bool, block: @escaping VoidBlock) -> Timer {
+            let target = BlockOperation(block: block)
+            let selector = #selector(BlockOperation.main)
+            return Timer.scheduledTimer(timeInterval: interval,
+                                        target: target,
+                                        selector: selector,
+                                        userInfo: nil,
+                                        repeats: repeats)
+        }
+
+        @discardableResult
+        public static func timeout(interval: TimeInterval, block: @escaping VoidBlock) -> Timer {
+            return Timer.scheduled(interval: interval, repeats: false, block: block)
+        }
+
+        @discardableResult
+        public static func interval(interval: TimeInterval, block: @escaping VoidBlock) -> Timer {
+            return Timer.scheduled(interval: interval, repeats: true, block: block)
+        }
+
+    }
+#endif

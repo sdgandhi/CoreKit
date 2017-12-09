@@ -7,20 +7,20 @@
 //
 
 #if os(iOS) || os(tvOS)
-    
+
     public extension AppleView {
-        
+
         public func animateBackgroundColor(color: AppleColor, duration: Double = 0.5) {
             let originalColor = self.backgroundColor?.copy() as? AppleColor ?? AppleColor.clear
-            
-            AppleView.animate(withDuration: duration, animations: {
+
+            AppleView.animate(withDuration: duration) {
                 self.backgroundColor = color
-                AppleView.animate(withDuration: duration, animations: {
+                AppleView.animate(withDuration: duration) {
                     self.backgroundColor = originalColor
-                })
-            })
+                }
+            }
         }
-        
+
     }
 
 #endif

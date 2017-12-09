@@ -1,5 +1,5 @@
 //
-//  Enum+Collection_Tests.swift
+//  Enum+CollectionTests.swift
 //  CoreKit-Tests
 //
 //  Created by Tibor Bödecs on 2017. 09. 26..
@@ -9,26 +9,24 @@
 import XCTest
 @testable import CoreKit
 
+class EnumCollectionTests: XCTestCase {
 
-class EnumCollection_Tests: XCTestCase {
-    
+    enum IntEnum: Int, EnumCollection {
+        case a
+        case b
+        case c
+    }
+
+    enum StringEnum: String, EnumCollection {
+        case a = "test"
+        case b
+    }
+
     func test() {
 
-        enum IntEnum: Int, EnumCollection {
-            case a
-            case b
-            case c
-        }
-
-        enum StringEnum: String, EnumCollection {
-            case a = "test"
-            case b
-        }
-        
         XCTAssert(IntEnum.allValues.count == 3)
         XCTAssert(StringEnum.allValues.count == 2)
         XCTAssert(IntEnum.allValues.map { $0.rawValue } == [0, 1, 2])
         XCTAssert(StringEnum.allValues.map { $0.rawValue } == ["test", "b"])
     }
 }
-

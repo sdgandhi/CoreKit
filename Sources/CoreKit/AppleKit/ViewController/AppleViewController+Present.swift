@@ -9,12 +9,12 @@
 #if os(iOS) || os(tvOS)
 
     public extension AppleViewController {
-        
+
         public func present(viewController: AppleViewController, animated: Bool = true, completion: VoidBlock? = nil) {
             self.providesPresentationContextTransitionStyle = true
             self.definesPresentationContext = true
             viewController.modalPresentationStyle = .overCurrentContext
-            self.present(viewController, animated: animated, completion:completion)
+            self.present(viewController, animated: animated, completion: completion)
         }
     }
 

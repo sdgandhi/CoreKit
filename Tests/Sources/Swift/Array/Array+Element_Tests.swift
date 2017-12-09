@@ -1,5 +1,5 @@
 //
-//  Array+Element_Tests.swift
+//  Array+ElementTests.swift
 //  CoreKit-Tests
 //
 //  Created by Tibor Bödecs on 2017. 09. 26..
@@ -9,16 +9,14 @@
 import XCTest
 @testable import CoreKit
 
+class ArrayElementTests: XCTestCase {
 
-class ArrayElement_Tests: XCTestCase {
-    
     func test() {
         let sample1: [String] = ["a", "b", "c"]
-        
+
         XCTAssert(sample1.element(at: -1) == nil)
         XCTAssert(sample1.element(at: 5) == nil)
         XCTAssert(sample1.element(at: 0) == Optional("a"))
         XCTAssert(sample1.element(at: 2) == Optional("c"))
     }
 }
-

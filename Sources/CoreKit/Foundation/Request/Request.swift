@@ -6,14 +6,13 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-import Foundation.NSURLSession
+import Foundation
 
 
 public protocol Endpoint {
 
     var request: Request { get }
 }
-
 
 open class Request {
 
@@ -43,28 +42,26 @@ open class Request {
         public let expires: Date
 
         public init(type: String, token: String, expires: Date) {
-            self.type    = type
-            self.token   = token
+            self.type = type
+            self.token = token
             self.expires = expires
         }
 
         public var requestHeaderValue: String {
-            get {
-                if let type = self.type {
-                    return type + " " + self.token
-                }
-                return self.token
+            if let type = self.type {
+                return type + " " + self.token
             }
+            return self.token
         }
     }
 
     public enum Header {
-
+        // swiftlint:disable nesting
         private enum Keys: String {
             case ContentDisposition = "Content-Disposition"
             case Accept             = "Accept"
             case ContentType        = "Content-Type"
-//            case ContentLength      = "Content-Length"
+            //            case ContentLength      = "Content-Length"
             case UserAgent          = "User-Agent"
             case Authorization      = "Authorization"
         }
@@ -72,26 +69,28 @@ open class Request {
         case ContentDisposition(String)
         case Accept([String])
         case ContentType(String)
-//        case ContentLength(Data)
+        //        case ContentLength(Data)
         case UserAgent(String)
         case Authorization(Token)
         case Custom(String, String)
 
         public var raw: URLQueryItem {
             switch self {
-            case .ContentDisposition(let disposition):
+            case let .ContentDisposition(disposition):
                 return URLQueryItem(name: Keys.ContentDisposition.rawValue, value: disposition)
-            case .Accept(let types):
-                return URLQueryItem(name: Keys.Accept.rawValue, value: types.reduce("", { x, y in x ?? "" + ", " + y }))
-            case .ContentType(let type):
+            case let .Accept(types):
+                return URLQueryItem(name: Keys.Accept.rawValue,
+                                    value: types.reduce("", { x, y in x ?? "" + ", " + y }))
+            case let .ContentType(type):
                 return URLQueryItem(name: Keys.ContentType.rawValue, value: type)
-//            case .ContentLength(let data):
-//                return URLQueryItem(name: Keys.ContentLength.rawValue, value: String(data.count) ?? "0")
-            case .UserAgent(let type):
+                //            case .ContentLength(let data):
+            //                return URLQueryItem(name: Keys.ContentLength.rawValue,
+            //                    value: String(data.count) ?? "0")
+            case let .UserAgent(type):
                 return URLQueryItem(name: Keys.UserAgent.rawValue, value: type)
-            case .Authorization(let token):
+            case let .Authorization(token):
                 return URLQueryItem(name: Keys.Authorization.rawValue, value: token.requestHeaderValue)
-            case .Custom(let key, let value):
+            case let .Custom(key, value):
                 return URLQueryItem(name: key, value: value)
             }
         }
@@ -107,39 +106,36 @@ open class Request {
 
     let user: String?
     let password: String?
-    
+
     let scheme: String?
     let port: Int?
-    
+
     let task: Task
 
     public init(_ path: String,
-                 query: [URLQueryItem] = [],
-              fragment: String? = nil,
+                query: [URLQueryItem] = [],
+                fragment: String? = nil,
                 method: Method = .get,
-               headers: [Header] = [],
-                  data: Data? = nil,
-                  user: String? = nil,
-              password: String? = nil,
+                headers: [Header] = [],
+                data: Data? = nil,
+                user: String? = nil,
+                password: String? = nil,
                 scheme: String? = nil,
-                  port: Int? = nil,
-                  task: Task = .data)
-    {
-        self.path     = path
-        self.query    = query
+                port: Int? = nil,
+                task: Task = .data) {
+        self.path = path
+        self.query = query
         self.fragment = fragment
-        self.method   = method
-        self.headers  = headers
-        self.data     = data
-        self.user     = user
+        self.method = method
+        self.headers = headers
+        self.data = data
+        self.user = user
         self.password = password
-        self.scheme   = scheme
-        self.port     = port
-        self.task     = task
+        self.scheme = scheme
+        self.port = port
+        self.task = task
     }
 }
-
-
 
 //public class JsonRequest: DataRequest
 //{
@@ -160,7 +156,4 @@ open class Request {
 //        self.init(method: method, query: query, headers: headers, params: params, fragment: fragment, data: data)
 //    }
 //}
-
-
-
 

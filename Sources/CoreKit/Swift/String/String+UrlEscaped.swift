@@ -8,12 +8,12 @@
 
 
 public extension String {
-    
+
     /**
      Returns a percent-escaped string following RFC 3986 for a query string key or value.
      */
     public var urlEscaped: String {
+        // swiftlint:disable:next force_unwrapping
         return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
     }
 }
-

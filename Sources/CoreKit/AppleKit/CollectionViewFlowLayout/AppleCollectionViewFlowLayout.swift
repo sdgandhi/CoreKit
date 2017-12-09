@@ -6,22 +6,19 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-
 #if os(iOS) || os(tvOS)
-    
+
     import UIKit.UICollectionView
-    
+
     public typealias AppleCollectionViewFlowLayout = UICollectionViewFlowLayout
-    public typealias AppleCollectionViewDelegateFlowLayout  = UICollectionViewDelegateFlowLayout;
-    
+    public typealias AppleCollectionViewDelegateFlowLayout = UICollectionViewDelegateFlowLayout
+
 #endif
 #if os(macOS)
-    
+
     import AppKit.NSCollectionView
-    
+
     public typealias AppleCollectionViewFlowLayout = NSCollectionViewFlowLayout
-    public typealias AppleCollectionViewDelegateFlowLayout  = NSCollectionViewDelegateFlowLayout
-    
+    public typealias AppleCollectionViewDelegateFlowLayout = NSCollectionViewDelegateFlowLayout
+
 #endif
-
-

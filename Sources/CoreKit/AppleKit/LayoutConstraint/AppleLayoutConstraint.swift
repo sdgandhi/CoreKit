@@ -7,19 +7,16 @@
 //
 
 #if os(iOS) || os(tvOS)
-    
+
     import UIKit.NSLayoutConstraint
-    
+
     public typealias AppleLayoutConstraint = NSLayoutConstraint
-    
+
 #endif
 #if os(macOS)
-    
+
     import AppKit.NSLayoutConstraint
-    
+
     public typealias AppleLayoutConstraint = NSLayoutConstraint
 
-
 #endif
-
-

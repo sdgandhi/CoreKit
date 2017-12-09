@@ -7,11 +7,11 @@
 //
 
 #if os(iOS)
-    
+
     import Foundation.NSIndexSet
 
     public extension CollectionView {
-        
+
         func transformTo(_ source: CollectionViewSource) {
             self.performBatchUpdates({
                 if let indexes = self.source?.sectionIndexes {
@@ -21,11 +21,11 @@
                 if let indexes = source.sectionIndexes {
                     self.insertSections(indexes as IndexSet)
                 }
-                
-            }, completion: { (finished) -> Void in
+
+            }, completion: { (_) -> Void in
                 // do nothing...
             })
         }
-        
+
     }
 #endif

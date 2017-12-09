@@ -1,5 +1,5 @@
 //
-//  FloatingPoint+Random_Tests.swift
+//  FloatingPoint+RandomTests.swift
 //  CoreKit-Tests
 //
 //  Created by Tibor Bödecs on 2017. 09. 26..
@@ -9,9 +9,8 @@
 import XCTest
 @testable import CoreKit
 
-
-class FloatingPointRandom_Tests: XCTestCase {
-    
+class FloatingPointRandomTests: XCTestCase {
+#if os(iOS) || os(macOS) || os(watchOS) || os(tvOS)
     func test() {
         let randomFloat = Float.random
         let randomDouble = Double.random
@@ -19,5 +18,5 @@ class FloatingPointRandom_Tests: XCTestCase {
         XCTAssert(randomFloat > 0)
         XCTAssert(randomDouble > 0)
     }
+#endif
 }
-

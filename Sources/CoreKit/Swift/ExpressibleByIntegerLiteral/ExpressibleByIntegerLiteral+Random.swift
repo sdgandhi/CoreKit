@@ -6,20 +6,21 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-import Darwin
+#if os(iOS) || os(tvOS) || os(macOS) || os(watchOS)
 
+    import Darwin
 
-public extension ExpressibleByIntegerLiteral {
+    public extension ExpressibleByIntegerLiteral {
 
-    /**
-     Randomization of the generic integer type
-     
-     - returns: A random integer value
-     */
-    public static var random: Self {
-        var r: Self = 0
-        arc4random_buf(&r, MemoryLayout<Self>.size)
-        return r
+        /**
+         Randomization of the generic integer type
+
+         - returns: A random integer value
+         */
+        public static var random: Self {
+            var r: Self = 0
+            arc4random_buf(&r, MemoryLayout<Self>.size)
+            return r
+        }
     }
-
-}
+#endif

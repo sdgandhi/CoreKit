@@ -7,12 +7,12 @@
 //
 
 #if os(iOS) || os(tvOS)
-    
+
     /**
      AppleView extension to easily create views supporting autolayout
      */
     public extension AppleView {
-        
+
         /**
          Convenience init method
          
@@ -24,7 +24,7 @@
 
             self.translatesAutoresizingMaskIntoConstraints = !autolayout
         }
-        
+
         /**
          It creates a new view object
          
@@ -33,7 +33,7 @@
          */
         public static func create(autolayout: Bool = true) -> Self {
             let _self = self.init()
-            let view  = _self as AppleView
+            let view = _self as AppleView
             view.translatesAutoresizingMaskIntoConstraints = !autolayout
             return _self
         }
@@ -46,7 +46,9 @@
          - returns: An initialized view object
          */
         public static func createFromNib(owner: Any? = nil, options: [AnyHashable: Any]? = nil) -> AppleView {
-            return AppleBundle.main.loadNibNamed(String(describing: self), owner: owner, options: options)?.last as! AppleView
+            let name = String(describing: self)
+            // swiftlint:disable:next force_cast
+            return AppleBundle.main.loadNibNamed(name, owner: owner, options: options)?.last as! AppleView
         }
 
     }

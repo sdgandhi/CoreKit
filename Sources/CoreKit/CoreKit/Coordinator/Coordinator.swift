@@ -7,25 +7,24 @@
 //
 
 #if os(iOS) || os(tvOS) || os(macOS)
-    
+
     open class Coordinator {
-        
+
         open var rootViewController: AppleViewController
-        
+
         open var subCoordinators: [Coordinator] = []
-        
+
         public init(rootViewController: AppleViewController) {
             self.rootViewController = rootViewController
         }
-        
+
         open func addSubCoordinator(_ coordinator: Coordinator) {
             self.subCoordinators.append(coordinator)
         }
-        
+
         open func removeSubCoordinator(_ coordinator: Coordinator) {
             self.subCoordinators = self.subCoordinators.filter { $0 !== coordinator }
         }
     }
 
 #endif
-

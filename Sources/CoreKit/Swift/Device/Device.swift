@@ -6,7 +6,6 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-
 /**
  Contains informations about the actual device
  */
@@ -19,7 +18,7 @@ public struct Device {
         case arch64
         case arch32
     }
-    
+
     /**
      Returns the CPU architecture of the device
      
@@ -32,4 +31,3 @@ public struct Device {
         return .arch32
     }
 }
-

@@ -6,19 +6,19 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-import Foundation.NSURLProtocol
+#if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
 
+    import Foundation.NSURLProtocol
 
-/*
- usage: URLProtocol.registerClass(URLRequestLoggerProtocol.self)
- */
+    /*
+     usage: URLProtocol.registerClass(URLRequestLoggerProtocol.self)
+     */
 
-class URLRequestLoggerProtocol: URLProtocol {
+    class URLRequestLoggerProtocol: URLProtocol {
 
-    override class func canInit(with request: URLRequest) -> Bool {
-        print(request.cURLRepresentation())
-        return false
+        override class func canInit(with request: URLRequest) -> Bool {
+            print(request.cURLRepresentation())
+            return false
+        }
     }
-}
-
-
+#endif

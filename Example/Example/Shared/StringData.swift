@@ -10,13 +10,11 @@ import Foundation
 import CoreKit
 import CoreGraphics
 
-
 class StringData: CollectionViewData<StringItem, String> {
-    
+
     override func initialize() {
-        
         super.initialize()
-        
+
 //        self.config = { item, data, indexPath, grid in
 //            item.textLabel.text = data
 //        }
@@ -36,13 +34,12 @@ class StringData: CollectionViewData<StringItem, String> {
         #if os(macOS)
             item.textLabel.stringValue = data
         #endif
-        
     }
-    
+
     override func size(data: String, indexPath: AppleIndexPath, grid: Grid) -> CGSize {
         return CGSize(width: 320, height: 128)
     }
-    
+
     override func callback(data: String, indexPath: AppleIndexPath) -> Bool {
         print("tap from method")
         return true

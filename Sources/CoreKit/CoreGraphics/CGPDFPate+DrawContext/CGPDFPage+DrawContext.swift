@@ -10,8 +10,7 @@
 
 import CoreGraphics.CGPDFPage
 import UIKit.UIGraphics
-    
-    
+
 public extension CGPDFPage {
 
     /**
@@ -25,25 +24,25 @@ public extension CGPDFPage {
         }
 
         context.saveGState()
-        
-        let image     = UIGraphicsGetImageFromCurrentImageContext()
+
+        // swiftlint:disable:next force_unwrapping
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
         var transform = CGAffineTransform.identity
-        transform     = transform.scaledBy(x: 1.0, y: -1.0)
-        transform     = transform.translatedBy(x: 0, y: -image!.size.height)
-        
+        transform = transform.scaledBy(x: 1.0, y: -1.0)
+        transform = transform.translatedBy(x: 0, y: -image.size.height)
+
         context.concatenate(transform)
 
-        let drawRect    = rect.applying(transform)
-        let pageRect    = self.getBoxRect(.cropBox)
-        let size        = pageRect.size.scaleToFit(size: drawRect.size)
+        let drawRect = rect.applying(transform)
+        let pageRect = self.getBoxRect(.cropBox)
+        let size = pageRect.size.scaleToFit(size: drawRect.size)
         let drawingRect = pageRect.fittingRect(drawRect)
-        
+
         context.translateBy(x: drawingRect.origin.x, y: drawingRect.origin.y)
         context.scaleBy(x: size, y: size)
         context.drawPDFPage(self)
         context.restoreGState()
     }
 }
-    
-#endif
 
+#endif

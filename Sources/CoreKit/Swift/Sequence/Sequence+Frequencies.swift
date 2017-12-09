@@ -11,15 +11,14 @@ public extension Sequence where Element: Hashable {
 
     /**
      Returns the frequencies of the values from a sequence
-     
+
      - returns: Array of the (key, frequency) values
      */
     public var frequencies: [(Element, Int)] {
-        var result: [Element:Int] = [:]
+        var result: [Element: Int] = [:]
         for x in self {
             result[x] = (result[x] ?? 0) + 1
         }
         return result.sorted { $0.1 > $1.1 }
     }
 }
-

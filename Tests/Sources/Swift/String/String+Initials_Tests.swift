@@ -1,5 +1,5 @@
 //
-//  String+Initials_Tests.swift
+//  String+InitialsTests.swift
 //  CoreKit-Tests
 //
 //  Created by Tibor Bödecs on 2017. 09. 27..
@@ -9,23 +9,18 @@
 import XCTest
 @testable import CoreKit
 
+class StringInitialsTests: XCTestCase {
 
-
-class StringInitials_Tests: XCTestCase {
-    
     func test() {
-        
+
         let str1 = "árvíztűrő a tükörfúrógép ma"
         let str2 = "árvíztűrő tükörfúrógép"
         let str3 = "hello"
         let str4 = ""
-        
+
         XCTAssert(str1.initials == "áatm")
         XCTAssert(str2.initials == "át")
         XCTAssert(str3.initials == "h")
         XCTAssert(str4.initials == "")
     }
 }
-
-
-

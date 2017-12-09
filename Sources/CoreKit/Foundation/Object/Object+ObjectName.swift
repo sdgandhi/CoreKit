@@ -6,10 +6,16 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-import Foundation.NSObject
+import Foundation
 
 
 public extension NSObject {
+
+#if os(Linux)
+    public static func description() -> String {
+        return String(describing: self)
+    }
+#endif
 
     /**
      Returns the full name with the namespace identifier
@@ -21,7 +27,7 @@ public extension NSObject {
     public var objectNameIdentifier: String {
         return type(of: self).description()
     }
-    
+
     public static var objectNamespace: String? {
         let names = NSStringFromClass(self).split(separator: ".").map { String($0) }
         if names.count <= 1 {
@@ -35,6 +41,7 @@ public extension NSObject {
     }
 
     public static var objectName: String {
+        // swiftlint:disable:next force_unwrapping
         return String(NSStringFromClass(self).split(separator: ".").last!)
     }
 

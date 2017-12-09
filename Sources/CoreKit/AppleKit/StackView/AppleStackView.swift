@@ -7,16 +7,16 @@
 //
 
 #if os(iOS) || os(tvOS)
-    
+
     import UIKit.UIStackView
-    
+
     public typealias AppleStackView = UIStackView
-    
+
 #endif
 #if os(macOS)
-    
+
     import AppKit.NSStackView
-    
+
     public typealias AppleStackView = NSStackView
-    
+
 #endif

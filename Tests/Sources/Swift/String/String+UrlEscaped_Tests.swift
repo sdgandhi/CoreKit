@@ -1,5 +1,5 @@
 //
-//  String+UrlEscaped_Tests.swift
+//  String+UrlEscapedTests.swift
 //  CoreKit-Tests
 //
 //  Created by Tibor Bödecs on 2017. 09. 27..
@@ -9,17 +9,11 @@
 import XCTest
 @testable import CoreKit
 
+class StringUrlEscapedTests: XCTestCase {
 
-class StringUrlEscaped_Tests: XCTestCase {
-    
     func test() {
         let key = "árvíztűrő tükörfúrógép[]p"
         let value = "%C3%A1rv%C3%ADzt%C5%B1r%C5%91%20t%C3%BCk%C3%B6rf%C3%BAr%C3%B3g%C3%A9p%5B%5Dp"
         XCTAssert(key.urlEscaped == value)
     }
 }
-
-
-
-
-

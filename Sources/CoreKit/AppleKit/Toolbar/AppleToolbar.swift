@@ -7,26 +7,17 @@
 //
 
 #if os(iOS)
-    
+
     import UIKit.UIToolbar
-    
+
     public typealias AppleToolbar = UIToolbar
-    
+
 #endif
 
 #if os(macOS)
-    
+
     import AppKit.NSToolbar
-    
+
     public typealias AppleToolbar = NSToolbar
-    
+
 #endif
-
-
-
-
-
-
-
-
-

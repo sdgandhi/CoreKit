@@ -6,24 +6,25 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS) 
-    
+#if os(iOS) || os(tvOS)
+
     import UIKit.UIButton
-    
+
     public typealias AppleButton = UIButton
-    
+
 #endif
 #if os(macOS)
-    
+
     import AppKit.NSButton
-    
+
     public typealias AppleButton = NSButton
-    
+
     public extension AppleButton {
 
         public func setTextColor(color: AppleColor) {
+            // swiftlint:disable:next force_cast
             let attributedString = self.attributedTitle.mutableCopy() as! NSMutableAttributedString
-            let range = NSMakeRange(0, attributedString.length)
+            let range = NSRange(location: 0, length: attributedString.length)
             attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: range)
             self.attributedTitle = attributedString
         }
@@ -36,5 +37,3 @@
 public typealias AppleButtonBlock = (AppleButton) -> Void
 
 #endif
-
-

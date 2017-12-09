@@ -6,20 +6,14 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-import Darwin
 
-
-public extension Bool
-{
+public extension Bool {
     /**
      Generates a random bool value
-     
+
      - returns: The random true or false value
      */
     public static var random: Bool {
-        return arc4random_uniform(2) == 0
+        return rndm(to: 1) == 1
     }
 }
-
-
-

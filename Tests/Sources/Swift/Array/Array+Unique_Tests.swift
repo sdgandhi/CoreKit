@@ -1,5 +1,5 @@
 //
-//  Array+Unique_Tests.swift
+//  Array+UniqueTests.swift
 //  CoreKit-iOS-Tests
 //
 //  Created by Tibor Bödecs on 2017. 09. 26..
@@ -9,8 +9,7 @@
 import XCTest
 @testable import CoreKit
 
-
-class ArrayUnique_Tests: XCTestCase {
+class ArrayUniqueTests: XCTestCase {
 
     func test() {
         let sample1: [String] = ["a", "b", "a", "a", "c", "b"]
@@ -23,8 +22,6 @@ class ArrayUnique_Tests: XCTestCase {
             sample1.unique.contains("c")
         )
 
-        XCTAssert(sample2.unique.count == 0)
+        XCTAssert(sample2.unique.isEmpty)
     }
 }
-
-

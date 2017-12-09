@@ -7,20 +7,16 @@
 //
 
 #if os(iOS) || os(tvOS) || os(watchOS)
-    
+
     import UIKit.UIGeometry
-    
+
     public typealias AppleEdgeInsets = UIEdgeInsets
 
 #endif
 #if os(macOS)
-    
+
     import Foundation
-    
+
     public typealias AppleEdgeInsets = NSEdgeInsets
-    
+
 #endif
-
-
-
-

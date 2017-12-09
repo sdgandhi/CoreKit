@@ -1,5 +1,5 @@
 //
-//  Device_Tests.swift
+//  DeviceTests.swift
 //  CoreKit-Tests
 //
 //  Created by Tibor Bödecs on 2017. 09. 26..
@@ -9,13 +9,10 @@
 import XCTest
 @testable import CoreKit
 
+class DeviceTests: XCTestCase {
 
-class Device_Tests: XCTestCase {
-    
     func test() {
 
         XCTAssert(Device.architecture == Device.Architecture.arch64)
     }
 }
-
-

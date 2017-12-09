@@ -8,7 +8,7 @@
 
 
 public extension Array {
-    
+
     /**
      Returns the last n element from an array
 

@@ -8,12 +8,10 @@
 
 #if os(iOS) || os(tvOS) || os(macOS)
 
-    
     public typealias CollectionViewCallback = (Any, AppleIndexPath) -> Void
-    
-    
+
     open class CollectionViewSection {
-        
+
         public var grid: Grid?
         public var header: CollectionViewDataProtocol?
         public var footer: CollectionViewDataProtocol?
@@ -24,8 +22,7 @@
                     header: CollectionViewDataProtocol? = nil,
                     footer: CollectionViewDataProtocol? = nil,
                     items: [CollectionViewDataProtocol] = [],
-                    callback: CollectionViewCallback? = nil)
-        {
+                    callback: CollectionViewCallback? = nil) {
             self.grid = grid
             self.header = header
             self.footer = footer
@@ -33,6 +30,5 @@
             self.callback = callback
         }
     }
-    
-#endif
 
+#endif

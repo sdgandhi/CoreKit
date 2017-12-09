@@ -7,14 +7,9 @@
 //
 
 #if os(iOS) || os(tvOS)
-    
+
     import UIKit.UINavigationBar
-    
+
     public typealias AppleNavigationBar = UINavigationBar
-    
+
 #endif
-
-
-
-
-

@@ -7,18 +7,17 @@
 //
 
 #if os(iOS) || os(tvOS) || os(watchOS)
-    
+
     import UIKit.UIBezierPath
-    
+
     public typealias AppleBezierPath = UIBezierPath
-    
-    
+
 #endif
 
 #if os(macOS)
-    
+
     import AppKit.NSBezierPath
-    
+
     public typealias AppleBezierPath = NSBezierPath
 
     public extension AppleBezierPath {
@@ -30,8 +29,8 @@
             }
             var didClosePath = false
 
-            for i in 0...self.elementCount-1 {
-                var points = [NSPoint](repeating: NSZeroPoint, count: 3)
+            for i in 0...self.elementCount - 1 {
+                var points = [NSPoint](repeating: NSPoint.zero, count: 3)
                 switch self.element(at: i, associatedPoints: &points) {
                 case .moveToBezierPathElement:
                     path.move(to: points[0])
@@ -41,7 +40,7 @@
                     path.addCurve(to: points[0], control1: points[1], control2: points[2])
                 case .closePathBezierPathElement:
                     path.closeSubpath()
-                    didClosePath = true;
+                    didClosePath = true
                 }
             }
             if !didClosePath {
@@ -52,8 +51,3 @@
     }
 
 #endif
-
-
-
-
-

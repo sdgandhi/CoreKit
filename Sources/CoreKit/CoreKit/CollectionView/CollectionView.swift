@@ -6,18 +6,16 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-
 #if os(iOS) || os(tvOS) || os(macOS)
 
-    
     open class CollectionView: AppleCollectionView {
 
 //        open var scrollViewDelegate: AppleScrollViewDelegate?
-        
+
 //        open var scrollView: AppleScrollView? {
 //            return self.subviews.filter { $0 is AppleScrollView }.first as? AppleScrollView
 //        }
-        
+
         open var source: CollectionViewSource? = nil {
             didSet {
 
@@ -28,7 +26,7 @@
             }
         }
         #if os(iOS)
-        
+
         open var showsScrollIndicators: Bool {
             get {
                 return self.showsHorizontalScrollIndicator || self.showsVerticalScrollIndicator
@@ -40,5 +38,5 @@
         }
         #endif
     }
-    
+
 #endif

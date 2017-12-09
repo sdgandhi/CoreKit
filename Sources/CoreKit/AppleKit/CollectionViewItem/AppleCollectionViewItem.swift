@@ -7,16 +7,15 @@
 //
 
 #if os(iOS) || os(tvOS)
-    
+
     import UIKit.UICollectionView
 
     public typealias AppleCollectionViewItem = UICollectionViewCell
-    
-#elseif os(macOS)
-    
-    import AppKit.NSCollectionView
-    
-    public typealias AppleCollectionViewItem = NSCollectionViewItem
-    
-#endif
 
+#elseif os(macOS)
+
+    import AppKit.NSCollectionView
+
+    public typealias AppleCollectionViewItem = NSCollectionViewItem
+
+#endif

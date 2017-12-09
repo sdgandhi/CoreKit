@@ -6,15 +6,16 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-import Foundation.NSCharacterSet
+import Foundation
 
 
 public extension CharacterSet {
 
-    public static func +(lhs: CharacterSet, rhs: CharacterSet) -> CharacterSet {
-        let charset = NSMutableCharacterSet()
-        charset.formUnion(with: lhs)
-        charset.formUnion(with: rhs)
-        return charset as CharacterSet
+    public static func + (lhs: CharacterSet, rhs: CharacterSet) -> CharacterSet {
+        var charset = CharacterSet()
+        charset.formUnion(lhs)
+        charset.formUnion(rhs)
+        return charset
     }
 }
+

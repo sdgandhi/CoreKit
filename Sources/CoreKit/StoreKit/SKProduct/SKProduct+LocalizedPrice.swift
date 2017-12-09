@@ -6,23 +6,22 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-
 #if os(iOS) || os(tvOS) || os(OSX)
-import StoreKit
 
+    import StoreKit
 
-public extension SKProduct {
-    
-    public var localizedPrice: String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.locale = self.priceLocale
+    public extension SKProduct {
 
-        if let price = formatter.string(from: self.price) {
-            return price
+        public var localizedPrice: String {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
+            formatter.locale = self.priceLocale
+
+            if let price = formatter.string(from: self.price) {
+                return price
+            }
+            return "n/a"
         }
-        return "n/a"
     }
-}
 
 #endif

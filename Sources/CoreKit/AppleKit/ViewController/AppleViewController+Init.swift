@@ -7,7 +7,7 @@
 //
 
 #if os(macOS) || os(iOS) || os(tvOS)
-    
+
     public extension AppleViewController {
 
         public convenience init(nib: AppleNib.Identifier, bundle: AppleBundle = .main) {

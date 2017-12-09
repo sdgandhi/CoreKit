@@ -7,23 +7,23 @@
 //
 
 #if os(iOS) || os(tvOS)
-    
+
     import UIKit.UICollectionView
-    
+
     public typealias AppleCollectionViewReusableView = UICollectionReusableView
-    
+
     public let AppleCollectionElementKindSectionHeader = UICollectionElementKindSectionHeader
     public let AppleCollectionElementKindSectionFooter = UICollectionElementKindSectionFooter
-    
+
 #elseif os(macOS)
-    
+
     import AppKit.NSCollectionView
 
     public typealias AppleCollectionViewReusableView = NSCollectionViewItem
-    
-    public let AppleCollectionElementKindSectionHeader = NSCollectionView.SupplementaryElementKind.sectionHeader.rawValue
-    public let AppleCollectionElementKindSectionFooter = NSCollectionView.SupplementaryElementKind.sectionFooter.rawValue
-    
+
+    public let AppleCollectionElementKindSectionHeader =
+                        NSCollectionView.SupplementaryElementKind.sectionHeader.rawValue
+    public let AppleCollectionElementKindSectionFooter =
+                        NSCollectionView.SupplementaryElementKind.sectionFooter.rawValue
+
 #endif
-
-

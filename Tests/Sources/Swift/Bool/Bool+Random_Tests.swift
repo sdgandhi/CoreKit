@@ -1,5 +1,5 @@
 //
-//  Bool+Random_Tests.swift
+//  Bool+RandomTests.swift
 //  CoreKit-Tests
 //
 //  Created by Tibor Bödecs on 2017. 09. 26..
@@ -9,14 +9,11 @@
 import XCTest
 @testable import CoreKit
 
+class BoolRandomTests: XCTestCase {
 
-class BoolRandom_Tests: XCTestCase {
-    
     func test() {
         let random = Bool.random
 
         XCTAssert(random == true || random == false)
     }
 }
-
-

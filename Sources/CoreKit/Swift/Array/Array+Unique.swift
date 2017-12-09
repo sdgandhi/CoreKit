@@ -8,10 +8,10 @@
 
 
 public extension Array where Element: Hashable {
-    
+
     /**
      Returns only the unique elements from the array
-     
+
      - returns: Unique array of elements
      */
     public var unique: [Element] {

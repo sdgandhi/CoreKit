@@ -7,28 +7,28 @@
 //
 
 #if os(iOS) || os(tvOS)
-    
-#if os(iOS)
+
+    #if os(iOS)
     import UIKit.UIApplication
-#endif
-    
+    #endif
+
     open class TabBarViewController: AppleTabBarController {
 
-#if os(iOS)
+        #if os(iOS)
         open override var shouldAutorotate: Bool {
             if let viewController = self.viewControllers?[self.selectedIndex] {
                 return viewController.shouldAutorotate
             }
             return super.shouldAutorotate
         }
-        
+
         open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
             if let viewController = self.viewControllers?[self.selectedIndex] {
                 return viewController.supportedInterfaceOrientations
             }
             return super.supportedInterfaceOrientations
         }
-        
+
         open override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
             if let viewController = self.viewControllers?[self.selectedIndex] {
                 return viewController.preferredInterfaceOrientationForPresentation
@@ -42,9 +42,8 @@
             }
             return super.preferredStatusBarStyle
         }
-#endif
-        
+        #endif
+
     }
 
 #endif
-

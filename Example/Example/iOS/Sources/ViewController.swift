@@ -9,7 +9,6 @@
 import UIKit.UIViewController
 import CoreKit
 
-
 class Alma: NSObject {
     override init() {
         super.init()
@@ -19,21 +18,21 @@ class Alma: NSObject {
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: CollectionView!
-    
+
     //@objc(ViewController_Korte)
     class Korte: NSObject {
         override init() {
             super.init()
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let grid = Grid(view: self.collectionView)
         let source = CollectionViewSource(grid: grid)
         let section = CollectionViewSection()
-        
+
 //        self.collectionView.flowLayout?.sectionHeadersPinToVisibleBounds = true
         section.header = StringData("header")
         section.footer = StringData("footer")
@@ -54,11 +53,11 @@ class ViewController: UIViewController {
         print("------")
         testKorte()
     }
-    
+
     func testAlma() {
-        let classVar = Alma.self;
+        let classVar = Alma.self
         let classObj = Alma()
-        
+
         print("Unique Identifier: \(classVar.uniqueIdentifier)")
         print("Namespace: \(classVar.objectNamespace ?? "-")")
         print("Object Name: \(classVar.objectName)")
@@ -69,11 +68,11 @@ class ViewController: UIViewController {
         print("Object Name: \(classObj.objectName)")
         print("Object Name Identifier: \(classObj.objectNameIdentifier)")
     }
-    
+
     func testKorte() {
-        let classVar = Korte.self;
+        let classVar = Korte.self
         let classObj = Korte()
-        
+
         print("Unique Identifier: \(classVar.uniqueIdentifier)")
         print("Namespace: \(classVar.objectNamespace ?? "-")")
         print("Object Name: \(classVar.objectName)")
@@ -85,4 +84,3 @@ class ViewController: UIViewController {
         print("Object Name Identifier: \(classObj.objectNameIdentifier)")
     }
 }
-

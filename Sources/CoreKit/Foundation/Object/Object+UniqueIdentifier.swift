@@ -6,7 +6,7 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-import Foundation.NSObject
+import Foundation
 
 
 extension NSObject: UniqueIdentifier {}

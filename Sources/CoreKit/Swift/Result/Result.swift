@@ -14,9 +14,8 @@ public enum Result<T> {
     case failure(Error)
 }
 
-
 public extension Result {
-    
+
     /**
      Maps the result type to a new value
      
@@ -31,7 +30,7 @@ public extension Result {
             return .failure(err)
         }
     }
-    
+
     /**
      Maps the result type to a new value
      
@@ -48,8 +47,7 @@ public extension Result {
     }
 }
 
-public extension Result
-{
+public extension Result {
     /**
      Resolves a result to a throwing error or a value
      
@@ -63,7 +61,7 @@ public extension Result
             throw error
         }
     }
-    
+
     /**
      Initializes a Result with a throwing expression
      
@@ -80,4 +78,3 @@ public extension Result
         }
     }
 }
-

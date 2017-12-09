@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Example-macOS
 //
-//  Created by Tibor Bödecs on 2017. 10. 02..
+//  Created by Tibor Bödecs on 2017. 09. 27..
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
@@ -11,8 +11,6 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
@@ -20,7 +18,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-
 }
-

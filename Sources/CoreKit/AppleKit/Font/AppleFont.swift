@@ -7,21 +7,16 @@
 //
 
 #if os(iOS) || os(tvOS) || os(watchOS)
-    
+
     import UIKit.UIFont
-    
+
     public typealias AppleFont = UIFont
-    
+
 #endif
 #if os(macOS)
-    
+
     import AppKit.NSFont
-    
+
     public typealias AppleFont = NSFont
-    
+
 #endif
-
-
-
-
-
