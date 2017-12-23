@@ -9,7 +9,6 @@
 import XCTest
 @testable import CoreKit
 
-
 class RandomTests: XCTestCase {
 
     func testExample() {

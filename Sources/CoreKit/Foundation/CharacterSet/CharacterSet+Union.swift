@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public extension CharacterSet {
 
     public static func + (lhs: CharacterSet, rhs: CharacterSet) -> CharacterSet {
@@ -18,4 +17,3 @@ public extension CharacterSet {
         return charset
     }
 }
-

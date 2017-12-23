@@ -9,7 +9,6 @@
 // swiftlint:disable force_unwrapping line_length
 import Foundation
 
-
 extension Int {
     var megabyte: Int { return self * 1_048_576 }
 }

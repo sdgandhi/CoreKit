@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public extension Date {
 
     // swiftlint:disable force_unwrapping

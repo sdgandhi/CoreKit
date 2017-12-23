@@ -15,10 +15,23 @@
 
 public func rndm(to max: Int, from min: Int = 0) -> Int {
     #if os(iOS) || os(tvOS) || os(macOS) || os(watchOS)
-        return min + Int(arc4random_uniform(UInt32(max - min + 1)))
+        let scale = Double(arc4random()) / Double(UInt32.max)
     #endif
     #if os(Linux)
-        let scaled = Double(rand()) / Double(RAND_MAX)
-        return Int(Double(max - min + 1) * scaled) + min
+        let scale = Double(rand()) / Double(RAND_MAX)
     #endif
+    var value = max - min
+    let maximum = value.addingReportingOverflow(1)
+    if maximum.overflow {
+        value = Int.max
+    }
+    else {
+        value = maximum.partialValue
+    }
+    let partial = Int(Double(value) * scale)
+    let result = partial.addingReportingOverflow(min)
+    if result.overflow {
+        return partial
+    }
+    return result.partialValue
 }

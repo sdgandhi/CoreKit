@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public protocol Endpoint {
 
     var request: Request { get }
@@ -156,4 +155,3 @@ open class Request {
 //        self.init(method: method, query: query, headers: headers, params: params, fragment: fragment, data: data)
 //    }
 //}
-

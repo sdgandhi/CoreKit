@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public extension Data {
 
     /**
@@ -20,4 +19,3 @@ public extension Data {
         return String(decoding: self, as: UTF8.self)
     }
 }
-

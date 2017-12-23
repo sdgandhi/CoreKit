@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public extension String {
 
     public func substring(with range: NSRange) -> String? {

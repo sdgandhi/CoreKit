@@ -53,7 +53,6 @@ public extension String {
             index = lastIndex
 
             if token.hasPrefix("\"") && !inComment && !inLineComment {
-                //swiftlint:disable:next line_length
                 let _matches = backslash.matches(in: left, options: [], range: NSRange(location: 0, length: left.count))
                 if !_matches.isEmpty && ( !inString || _matches.first!.range.length % 2 == 0 ) {
                     inString = !inString

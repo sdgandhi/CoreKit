@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public extension BlockOperation {
 
     public convenience init(block: @escaping VoidBlock, completion: VoidBlock?) {

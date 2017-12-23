@@ -8,5 +8,4 @@
 
 import Foundation
 
-
 extension NSObject: UniqueIdentifier {}

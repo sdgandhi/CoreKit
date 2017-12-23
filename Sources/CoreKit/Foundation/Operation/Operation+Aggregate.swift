@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public extension Operation {
 
     /**
@@ -20,4 +19,3 @@ public extension Operation {
         return BlockOperation(block: {}, completion: completion)
     }
 }
-

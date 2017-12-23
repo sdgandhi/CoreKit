@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 open class Console {
 
     public var name: String
@@ -273,4 +272,3 @@ public extension Console {
     }
 
 }
-

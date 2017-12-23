@@ -9,7 +9,6 @@
 // swiftlint:disable force_unwrapping line_length
 import Foundation
 
-
 public struct TimeZoneLocation {
     public var identifier: String
     public var latitude: Double

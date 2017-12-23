@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public extension TimeInterval {
 
     public static var second: TimeInterval { return 1 }
@@ -17,4 +16,3 @@ public extension TimeInterval {
     public static var day: TimeInterval { return 86_400 }
     public static var week: TimeInterval { return 604_800 }
 }
-

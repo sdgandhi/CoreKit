@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public extension Date {
 
     public func interval(ofComponent comp: Calendar.Component, fromDate date: Date) -> Int {

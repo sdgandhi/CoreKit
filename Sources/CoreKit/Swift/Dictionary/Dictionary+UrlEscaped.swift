@@ -6,7 +6,6 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-
 public extension Dictionary where Key: ExpressibleByStringLiteral, Key: Comparable, Value: Any {
 
     /**

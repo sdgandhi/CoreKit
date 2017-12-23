@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public extension URLRequest {
 
     public func cURLRepresentation(withURLSession session: URLSession? = nil,

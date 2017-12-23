@@ -6,7 +6,6 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-
 public extension Bool {
     /**
      Generates a random bool value

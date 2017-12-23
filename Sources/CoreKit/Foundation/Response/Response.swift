@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public enum ResponseError: Error {
     case cancelled
     case invalidStatusCode(Int)
@@ -131,7 +130,7 @@ public extension Response {
             }
         }
     }
-    // swiftlint:disable:next line_length
+
     public func validate<S: Sequence>(statusCode acceptableStatusCodes: S) -> Response where S.Iterator.Element == Int {
         self.validations.append { result, _, reject in
             guard let httpResponse = result?.urlResponse as? HTTPURLResponse else {

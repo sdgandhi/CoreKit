@@ -8,26 +8,24 @@ Ultimate cross platform framework to create appleOS apps.
 * SwiftLint v0.23.1+
 
 
-### Swift Package Manager
+### Usage
+
+You can use CoreKit with the following package managers:
+
+#### Carthage
 
 ```bash
-swift build -Xswiftc "-target" -Xswiftc "x86_64-apple-macosx10.12"
+echo 'github "corekit/corekit" "master"' >> Cartfile
+carthage update
 ```
 
-### Warning: development in progress, here is a small todo list:
+#### Swift Package Manager
 
-* CGPDFPage+DrawContext it's not really good inside CG
-* TimeZoneLocation + Sun should be rewritten from the ground (moon additions)
-* Server + Request + Response complete refactor?!?
-* SKCircularProgressView not working on macOS (check uibezierpath)
-* AppleImage+Vector is not supported on macOS
-* AppleImage+Effects is not supported on macOS, SwiftLint
-* AppleViewController+Alert check & move extension to AppleAlertControllerAlert
-* AppleViewController extensions are iOS + tvOS only right now
-* Explicit scrollView delegate for CollectionView
-* Rework collectionViewSource
-
-
+```swift
+dependencies: [
+    .package(url: "https://github.com/CoreKit/CoreKit", .branch("master")),
+],
+```
 
 Enjoy. ;)
 

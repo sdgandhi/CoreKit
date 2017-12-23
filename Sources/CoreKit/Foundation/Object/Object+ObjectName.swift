@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public extension NSObject {
 
 #if os(Linux)

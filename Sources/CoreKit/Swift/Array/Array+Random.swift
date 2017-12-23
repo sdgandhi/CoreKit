@@ -6,7 +6,6 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-
 public extension Array {
 
     /**
@@ -18,8 +17,6 @@ public extension Array {
         guard !self.isEmpty else {
             return nil
         }
-
-        return self[rndm(to: self.count)]
+        return self[rndm(to: self.count - 1)]
     }
 }
-
