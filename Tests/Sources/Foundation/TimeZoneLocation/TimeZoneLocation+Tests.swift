@@ -13,7 +13,7 @@ class TimeZoneLocationTests: XCTestCase {
 
 #if os(iOS) || os(macOS) || os(watchOS) || os(tvOS)
     func test() {
-        
+
 //        let s1 = Set(TimeZoneLocation.supportedLocations.map({ $0.identifier }))
 //        let s2 = Set(TimeZone.knownTimeZoneIdentifiers)
 //        print(s1.count)

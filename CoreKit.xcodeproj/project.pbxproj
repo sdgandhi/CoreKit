@@ -2381,7 +2381,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1675589B1F7AEAD5005A5BDD /* Build configuration list for PBXNativeTarget "CoreKit-iOS" */;
 			buildPhases = (
-				16C4EBCA1F92844E00BB3FCC /* SwiftLint */,
 				167558821F7AEAD5005A5BDD /* Sources */,
 				167558831F7AEAD5005A5BDD /* Frameworks */,
 				167558841F7AEAD5005A5BDD /* Headers */,
@@ -2418,7 +2417,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16E9F3FE1F7B08AE00A78E33 /* Build configuration list for PBXNativeTarget "CoreKit-tvOS" */;
 			buildPhases = (
-				16C4EBCB1F928B0800BB3FCC /* SwiftLint */,
 				16E9F3E81F7B08AD00A78E33 /* Sources */,
 				16E9F3E91F7B08AD00A78E33 /* Frameworks */,
 				16E9F3EA1F7B08AD00A78E33 /* Headers */,
@@ -2455,7 +2453,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16E9F41A1F7B08BA00A78E33 /* Build configuration list for PBXNativeTarget "CoreKit-macOS" */;
 			buildPhases = (
-				16C4EBCC1F928B0E00BB3FCC /* SwiftLint */,
 				16E9F4041F7B08BA00A78E33 /* Sources */,
 				16E9F4051F7B08BA00A78E33 /* Frameworks */,
 				16E9F4061F7B08BA00A78E33 /* Headers */,
@@ -2492,7 +2489,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16E9F42A1F7B08CA00A78E33 /* Build configuration list for PBXNativeTarget "CoreKit-watchOS" */;
 			buildPhases = (
-				16C4EBCD1F928B1200BB3FCC /* SwiftLint */,
 				16E9F4201F7B08CA00A78E33 /* Sources */,
 				16E9F4211F7B08CA00A78E33 /* Frameworks */,
 				16E9F4221F7B08CA00A78E33 /* Headers */,
@@ -2622,65 +2618,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		16C4EBCA1F92844E00BB3FCC /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    #swiftlint autocorrect\n    echo \"swiftlint\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		16C4EBCB1F928B0800BB3FCC /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    #swiftlint autocorrect\n    echo \"swiftlint\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		16C4EBCC1F928B0E00BB3FCC /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    #swiftlint autocorrect\n    echo \"swiftlint\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		16C4EBCD1F928B1200BB3FCC /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    #swiftlint autocorrect\n    echo \"swiftlint\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		167558821F7AEAD5005A5BDD /* Sources */ = {
