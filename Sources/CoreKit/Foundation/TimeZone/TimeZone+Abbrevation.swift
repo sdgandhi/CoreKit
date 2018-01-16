@@ -1,9 +1,15 @@
-//: Playground - noun: a place where people can play
+//
+//  TimeZone+Abbrevation.swift
+//  CoreKit
+//
+//  Created by Tibor Bödecs on 2018. 01. 16..
+//  Copyright © 2018. Tibor Bödecs. All rights reserved.
+//
 
 import Foundation
 
-
 public extension TimeZone {
+
     public enum Abbrevation: String {
         case cest
         case cdt
@@ -62,15 +68,3 @@ public extension TimeZone {
         self.init(abbreviation: abbrevation.rawValue.uppercased())!
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

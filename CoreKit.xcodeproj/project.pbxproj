@@ -156,6 +156,17 @@
 		1640E9BE1F7BD47800156F37 /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1640E9BC1F7BD47800156F37 /* Date+Components.swift */; };
 		1640E9BF1F7BD47800156F37 /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1640E9BC1F7BD47800156F37 /* Date+Components.swift */; };
 		1640E9C01F7BD47800156F37 /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1640E9BC1F7BD47800156F37 /* Date+Components.swift */; };
+		164C289D200E3358006779F3 /* CLLocation+Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C289C200E3358006779F3 /* CLLocation+Sun.swift */; };
+		164C289E200E3358006779F3 /* CLLocation+Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C289C200E3358006779F3 /* CLLocation+Sun.swift */; };
+		164C289F200E3358006779F3 /* CLLocation+Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C289C200E3358006779F3 /* CLLocation+Sun.swift */; };
+		164C28A0200E3358006779F3 /* CLLocation+Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C289C200E3358006779F3 /* CLLocation+Sun.swift */; };
+		164C28A8200E3B5A006779F3 /* CLLocation+SunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C28A3200E3B47006779F3 /* CLLocation+SunTests.swift */; };
+		164C28A9200E3B5B006779F3 /* CLLocation+SunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C28A3200E3B47006779F3 /* CLLocation+SunTests.swift */; };
+		164C28AA200E3B5C006779F3 /* CLLocation+SunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C28A3200E3B47006779F3 /* CLLocation+SunTests.swift */; };
+		164C28AD200E3D5F006779F3 /* TimeZone+Abbrevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C28AC200E3D5F006779F3 /* TimeZone+Abbrevation.swift */; };
+		164C28AE200E3D5F006779F3 /* TimeZone+Abbrevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C28AC200E3D5F006779F3 /* TimeZone+Abbrevation.swift */; };
+		164C28AF200E3D5F006779F3 /* TimeZone+Abbrevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C28AC200E3D5F006779F3 /* TimeZone+Abbrevation.swift */; };
+		164C28B0200E3D5F006779F3 /* TimeZone+Abbrevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C28AC200E3D5F006779F3 /* TimeZone+Abbrevation.swift */; };
 		1655D6641F8F689600127471 /* AppleNib+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655D6631F8F689600127471 /* AppleNib+Init.swift */; };
 		1655D6651F8F689600127471 /* AppleNib+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655D6631F8F689600127471 /* AppleNib+Init.swift */; };
 		1655D6661F8F689600127471 /* AppleNib+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655D6631F8F689600127471 /* AppleNib+Init.swift */; };
@@ -189,10 +200,6 @@
 		1685E3301F7BDDF4008FE932 /* TimeZoneLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685E32E1F7BDDF4008FE932 /* TimeZoneLocation.swift */; };
 		1685E3311F7BDDF4008FE932 /* TimeZoneLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685E32E1F7BDDF4008FE932 /* TimeZoneLocation.swift */; };
 		1685E3321F7BDDF4008FE932 /* TimeZoneLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685E32E1F7BDDF4008FE932 /* TimeZoneLocation.swift */; };
-		1685E3341F7BE01D008FE932 /* TimeZoneLocation+Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685E3331F7BE01D008FE932 /* TimeZoneLocation+Sun.swift */; };
-		1685E3351F7BE01D008FE932 /* TimeZoneLocation+Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685E3331F7BE01D008FE932 /* TimeZoneLocation+Sun.swift */; };
-		1685E3361F7BE01D008FE932 /* TimeZoneLocation+Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685E3331F7BE01D008FE932 /* TimeZoneLocation+Sun.swift */; };
-		1685E3371F7BE01D008FE932 /* TimeZoneLocation+Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685E3331F7BE01D008FE932 /* TimeZoneLocation+Sun.swift */; };
 		1685E33A1F7BE141008FE932 /* Timer+Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685E3391F7BE141008FE932 /* Timer+Block.swift */; };
 		1685E33B1F7BE141008FE932 /* Timer+Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685E3391F7BE141008FE932 /* Timer+Block.swift */; };
 		1685E33C1F7BE141008FE932 /* Timer+Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685E3391F7BE141008FE932 /* Timer+Block.swift */; };
@@ -398,13 +405,9 @@
 		16A61AA61F922E80003A9129 /* String+JsonMinified_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A61AA11F922E7D003A9129 /* String+JsonMinified_Tests.swift */; };
 		16A61AA71F922E81003A9129 /* String+JsonMinified_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A61AA11F922E7D003A9129 /* String+JsonMinified_Tests.swift */; };
 		16A61AA81F922E82003A9129 /* String+JsonMinified_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A61AA11F922E7D003A9129 /* String+JsonMinified_Tests.swift */; };
-		16A61AAF1F924FC4003A9129 /* TimeZoneLocation+Sun_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A61AAA1F924F89003A9129 /* TimeZoneLocation+Sun_Tests.swift */; };
-		16A61AB01F924FC5003A9129 /* TimeZoneLocation+Sun_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A61AAA1F924F89003A9129 /* TimeZoneLocation+Sun_Tests.swift */; };
-		16A61AB11F924FC6003A9129 /* TimeZoneLocation+Sun_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A61AAA1F924F89003A9129 /* TimeZoneLocation+Sun_Tests.swift */; };
-		16A61AB31F9254DB003A9129 /* TimeZoneLocation+Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A61AB21F9254DB003A9129 /* TimeZoneLocation+Moon.swift */; };
-		16A61AB41F9254DB003A9129 /* TimeZoneLocation+Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A61AB21F9254DB003A9129 /* TimeZoneLocation+Moon.swift */; };
-		16A61AB51F9254DB003A9129 /* TimeZoneLocation+Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A61AB21F9254DB003A9129 /* TimeZoneLocation+Moon.swift */; };
-		16A61AB61F9254DB003A9129 /* TimeZoneLocation+Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A61AB21F9254DB003A9129 /* TimeZoneLocation+Moon.swift */; };
+		16A61AAF1F924FC4003A9129 /* TimeZoneLocation+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A61AAA1F924F89003A9129 /* TimeZoneLocation+Tests.swift */; };
+		16A61AB01F924FC5003A9129 /* TimeZoneLocation+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A61AAA1F924F89003A9129 /* TimeZoneLocation+Tests.swift */; };
+		16A61AB11F924FC6003A9129 /* TimeZoneLocation+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A61AAA1F924F89003A9129 /* TimeZoneLocation+Tests.swift */; };
 		16A8B6961F7BF86100D4471A /* AppleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A8B6951F7BF86100D4471A /* AppleColor.swift */; };
 		16A8B6971F7BF86100D4471A /* AppleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A8B6951F7BF86100D4471A /* AppleColor.swift */; };
 		16A8B6981F7BF86100D4471A /* AppleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A8B6951F7BF86100D4471A /* AppleColor.swift */; };
@@ -781,6 +784,9 @@
 		1640E9AB1F7BD22B00156F37 /* Data+DecodeJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+DecodeJson.swift"; sourceTree = "<group>"; };
 		1640E9B11F7BD2D700156F37 /* CharacterSet+Union.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Union.swift"; sourceTree = "<group>"; };
 		1640E9BC1F7BD47800156F37 /* Date+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Components.swift"; sourceTree = "<group>"; };
+		164C289C200E3358006779F3 /* CLLocation+Sun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Sun.swift"; sourceTree = "<group>"; };
+		164C28A3200E3B47006779F3 /* CLLocation+SunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+SunTests.swift"; sourceTree = "<group>"; };
+		164C28AC200E3D5F006779F3 /* TimeZone+Abbrevation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+Abbrevation.swift"; sourceTree = "<group>"; };
 		1655D6631F8F689600127471 /* AppleNib+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppleNib+Init.swift"; sourceTree = "<group>"; };
 		1655D6681F8F6BAA00127471 /* AppleNib+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppleNib+Identifier.swift"; sourceTree = "<group>"; };
 		165988451F7C0969001135AD /* AppleBezierPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleBezierPath.swift; sourceTree = "<group>"; };
@@ -793,7 +799,6 @@
 		167EEF5A1FEE474B00449A32 /* Date+TimeAgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+TimeAgo.swift"; sourceTree = "<group>"; };
 		1685E3281F7BDBD5008FE932 /* Locale+Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Countries.swift"; sourceTree = "<group>"; };
 		1685E32E1F7BDDF4008FE932 /* TimeZoneLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneLocation.swift; sourceTree = "<group>"; };
-		1685E3331F7BE01D008FE932 /* TimeZoneLocation+Sun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZoneLocation+Sun.swift"; sourceTree = "<group>"; };
 		1685E3391F7BE141008FE932 /* Timer+Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+Block.swift"; sourceTree = "<group>"; };
 		1685E33F1F7BE30A008FE932 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		1685E3411F7BE30A008FE932 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -848,8 +853,7 @@
 		16A61A961F922E2A003A9129 /* String+Substring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
 		16A61A9B1F922E44003A9129 /* String+JsonMinified.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+JsonMinified.swift"; sourceTree = "<group>"; };
 		16A61AA11F922E7D003A9129 /* String+JsonMinified_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+JsonMinified_Tests.swift"; sourceTree = "<group>"; };
-		16A61AAA1F924F89003A9129 /* TimeZoneLocation+Sun_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZoneLocation+Sun_Tests.swift"; sourceTree = "<group>"; };
-		16A61AB21F9254DB003A9129 /* TimeZoneLocation+Moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZoneLocation+Moon.swift"; sourceTree = "<group>"; };
+		16A61AAA1F924F89003A9129 /* TimeZoneLocation+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZoneLocation+Tests.swift"; sourceTree = "<group>"; };
 		16A8B6951F7BF86100D4471A /* AppleColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleColor.swift; sourceTree = "<group>"; };
 		16A8B69A1F7BF92800D4471A /* AppleColor+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppleColor+Random.swift"; sourceTree = "<group>"; };
 		16A8B69F1F7BF9CC00D4471A /* AppleColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppleColor+Hex.swift"; sourceTree = "<group>"; };
@@ -1062,6 +1066,7 @@
 			isa = PBXGroup;
 			children = (
 				161A0A3A1FA34C9F00DFBCC0 /* CLLocation+Bearing.swift */,
+				164C289C200E3358006779F3 /* CLLocation+Sun.swift */,
 			);
 			path = CLLocation;
 			sourceTree = "<group>";
@@ -1233,6 +1238,30 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
+		164C28A1200E3B25006779F3 /* CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				164C28A2200E3B34006779F3 /* CLLocation */,
+			);
+			path = CoreLocation;
+			sourceTree = "<group>";
+		};
+		164C28A2200E3B34006779F3 /* CLLocation */ = {
+			isa = PBXGroup;
+			children = (
+				164C28A3200E3B47006779F3 /* CLLocation+SunTests.swift */,
+			);
+			path = CLLocation;
+			sourceTree = "<group>";
+		};
+		164C28AB200E3D4F006779F3 /* TimeZone */ = {
+			isa = PBXGroup;
+			children = (
+				164C28AC200E3D5F006779F3 /* TimeZone+Abbrevation.swift */,
+			);
+			path = TimeZone;
+			sourceTree = "<group>";
+		};
 		165988441F7C095A001135AD /* BezierPath */ = {
 			isa = PBXGroup;
 			children = (
@@ -1279,8 +1308,6 @@
 			isa = PBXGroup;
 			children = (
 				1685E32E1F7BDDF4008FE932 /* TimeZoneLocation.swift */,
-				1685E3331F7BE01D008FE932 /* TimeZoneLocation+Sun.swift */,
-				16A61AB21F9254DB003A9129 /* TimeZoneLocation+Moon.swift */,
 			);
 			path = TimeZoneLocation;
 			sourceTree = "<group>";
@@ -1456,6 +1483,7 @@
 		1691BA381F7B90DB00B1FAB3 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				164C28AB200E3D4F006779F3 /* TimeZone */,
 				1685E3441F7BE394008FE932 /* URLRequest */,
 				1685E3401F7BE30A008FE932 /* Request */,
 				1685E33E1F7BE30A008FE932 /* Response */,
@@ -1747,7 +1775,7 @@
 		16A61AA91F924F70003A9129 /* TimeZoneLocation */ = {
 			isa = PBXGroup;
 			children = (
-				16A61AAA1F924F89003A9129 /* TimeZoneLocation+Sun_Tests.swift */,
+				16A61AAA1F924F89003A9129 /* TimeZoneLocation+Tests.swift */,
 			);
 			path = TimeZoneLocation;
 			sourceTree = "<group>";
@@ -1943,6 +1971,7 @@
 		16E9F42E1F7B09F300A78E33 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				164C28A1200E3B25006779F3 /* CoreLocation */,
 				1691BA391F7B90E100B1FAB3 /* Foundation */,
 				16E9F4301F7B09F300A78E33 /* Swift */,
 			);
@@ -2720,7 +2749,6 @@
 				1655D6641F8F689600127471 /* AppleNib+Init.swift in Sources */,
 				1685E3601F7BE640008FE932 /* SKProduct+LocalizedPrice.swift in Sources */,
 				16E9E0B01F828065008175C0 /* DispatchQueue+AsyncAfter.swift in Sources */,
-				1685E3341F7BE01D008FE932 /* TimeZoneLocation+Sun.swift in Sources */,
 				1640E9A21F7BD0C000156F37 /* BlockOperation.swift in Sources */,
 				161E285A1F7E67DE000CE260 /* CollectionViewSource.swift in Sources */,
 				16A1D28C1F7C4488000D76EC /* ViewController.swift in Sources */,
@@ -2790,6 +2818,8 @@
 				16F912EF1F7D0F580010C889 /* AppleViewController+Alert.swift in Sources */,
 				16E9E08F1F826C09008175C0 /* AppleObject.swift in Sources */,
 				16F858CD1F7D1D1700780B1C /* PageViewController.swift in Sources */,
+				164C289D200E3358006779F3 /* CLLocation+Sun.swift in Sources */,
+				164C28AD200E3D5F006779F3 /* TimeZone+Abbrevation.swift in Sources */,
 				1640E9801F7BCB1100156F37 /* CGSize+ScaleToFit.swift in Sources */,
 				16A1D20B1F7C3CF6000D76EC /* AppleCollectionViewLayout.swift in Sources */,
 				1640E9541F7BC65500156F37 /* FloatingPoint+RandomSignal.swift in Sources */,
@@ -2805,7 +2835,6 @@
 				1691BA181F7B8A2E00B1FAB3 /* String+FirstWord.swift in Sources */,
 				16E9F4711F7B0A1400A78E33 /* Array+Random.swift in Sources */,
 				16A8B6A51F7BFA7200D4471A /* AppleColor+Blend.swift in Sources */,
-				16A61AB31F9254DB003A9129 /* TimeZoneLocation+Moon.swift in Sources */,
 				1685E35A1F7BE4E7008FE932 /* SKEmitterNode+Unarchive.swift in Sources */,
 				16F912F41F7D11740010C889 /* AppleViewController+Present.swift in Sources */,
 				16F858C01F7D194200780B1C /* AppleView+AnimateBackgroundColor.swift in Sources */,
@@ -2824,7 +2853,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16A61AAF1F924FC4003A9129 /* TimeZoneLocation+Sun_Tests.swift in Sources */,
+				16A61AAF1F924FC4003A9129 /* TimeZoneLocation+Tests.swift in Sources */,
 				16A61AA61F922E80003A9129 /* String+JsonMinified_Tests.swift in Sources */,
 				16E9F4A81F7B0A2400A78E33 /* Array+Random_Tests.swift in Sources */,
 				16F859131F7E535400780B1C /* Object+UniqueIdentifier_Tests.swift in Sources */,
@@ -2832,6 +2861,7 @@
 				1687A5211F7B854D00456E62 /* Dictionary+UrlEscaped.swift in Sources */,
 				16E9F4A61F7B0A2400A78E33 /* Array+Unique_Tests.swift in Sources */,
 				16E9F4A71F7B0A2400A78E33 /* Array+Last_Tests.swift in Sources */,
+				164C28A8200E3B5A006779F3 /* CLLocation+SunTests.swift in Sources */,
 				1687A51C1F7B76B300456E62 /* Result_Tests.swift in Sources */,
 				1691BA251F7B8BB500B1FAB3 /* String+Initials.swift in Sources */,
 				1687A5261F7B858000456E62 /* String+UrlEscaped.swift in Sources */,
@@ -2919,7 +2949,6 @@
 				1640E9AD1F7BD22B00156F37 /* Data+DecodeJson.swift in Sources */,
 				16A8B6A11F7BF9CC00D4471A /* AppleColor+Hex.swift in Sources */,
 				1685E3611F7BE640008FE932 /* SKProduct+LocalizedPrice.swift in Sources */,
-				1685E3351F7BE01D008FE932 /* TimeZoneLocation+Sun.swift in Sources */,
 				1640E9A31F7BD0C000156F37 /* BlockOperation.swift in Sources */,
 				16A1D28D1F7C4488000D76EC /* ViewController.swift in Sources */,
 				1603A0D31F7E7518004D226F /* CollectionViewSection.swift in Sources */,
@@ -2986,6 +3015,8 @@
 				16A1D1E91F7C37B2000D76EC /* AppleFont.swift in Sources */,
 				16F912F01F7D0F580010C889 /* AppleViewController+Alert.swift in Sources */,
 				16F858CE1F7D1D1700780B1C /* PageViewController.swift in Sources */,
+				164C289E200E3358006779F3 /* CLLocation+Sun.swift in Sources */,
+				164C28AE200E3D5F006779F3 /* TimeZone+Abbrevation.swift in Sources */,
 				1640E9811F7BCB1100156F37 /* CGSize+ScaleToFit.swift in Sources */,
 				1603A0DE1F7E77D1004D226F /* CollectionViewController.swift in Sources */,
 				16A1D20C1F7C3CF6000D76EC /* AppleCollectionViewLayout.swift in Sources */,
@@ -3001,7 +3032,6 @@
 				16E9F47C1F7B0A1500A78E33 /* Array+Random.swift in Sources */,
 				16A8B6A61F7BFA7200D4471A /* AppleColor+Blend.swift in Sources */,
 				1603A0EF1F7E7839004D226F /* Coordinator.swift in Sources */,
-				16A61AB41F9254DB003A9129 /* TimeZoneLocation+Moon.swift in Sources */,
 				1685E35B1F7BE4E7008FE932 /* SKEmitterNode+Unarchive.swift in Sources */,
 				161E28681F7E6927000CE260 /* CollectionView.swift in Sources */,
 				16F912F51F7D11740010C889 /* AppleViewController+Present.swift in Sources */,
@@ -3020,7 +3050,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16A61AB01F924FC5003A9129 /* TimeZoneLocation+Sun_Tests.swift in Sources */,
+				16A61AB01F924FC5003A9129 /* TimeZoneLocation+Tests.swift in Sources */,
 				16A61AA71F922E81003A9129 /* String+JsonMinified_Tests.swift in Sources */,
 				16E9F49E1F7B0A2300A78E33 /* Array+Random_Tests.swift in Sources */,
 				16F859141F7E535500780B1C /* Object+UniqueIdentifier_Tests.swift in Sources */,
@@ -3028,6 +3058,7 @@
 				1687A5221F7B854D00456E62 /* Dictionary+UrlEscaped.swift in Sources */,
 				16E9F49C1F7B0A2300A78E33 /* Array+Unique_Tests.swift in Sources */,
 				16E9F49D1F7B0A2300A78E33 /* Array+Last_Tests.swift in Sources */,
+				164C28A9200E3B5B006779F3 /* CLLocation+SunTests.swift in Sources */,
 				1687A51D1F7B76B300456E62 /* Result_Tests.swift in Sources */,
 				1691BA261F7B8BB500B1FAB3 /* String+Initials.swift in Sources */,
 				1687A5271F7B858000456E62 /* String+UrlEscaped.swift in Sources */,
@@ -3115,7 +3146,6 @@
 				1640E9AE1F7BD22B00156F37 /* Data+DecodeJson.swift in Sources */,
 				16A8B6A21F7BF9CC00D4471A /* AppleColor+Hex.swift in Sources */,
 				1685E3621F7BE640008FE932 /* SKProduct+LocalizedPrice.swift in Sources */,
-				1685E3361F7BE01D008FE932 /* TimeZoneLocation+Sun.swift in Sources */,
 				1640E9A41F7BD0C000156F37 /* BlockOperation.swift in Sources */,
 				16A1D28E1F7C4488000D76EC /* ViewController.swift in Sources */,
 				1603A0D41F7E7518004D226F /* CollectionViewSection.swift in Sources */,
@@ -3182,6 +3212,8 @@
 				16A1D1EA1F7C37B2000D76EC /* AppleFont.swift in Sources */,
 				16F912F11F7D0F580010C889 /* AppleViewController+Alert.swift in Sources */,
 				16F858CF1F7D1D1700780B1C /* PageViewController.swift in Sources */,
+				164C289F200E3358006779F3 /* CLLocation+Sun.swift in Sources */,
+				164C28AF200E3D5F006779F3 /* TimeZone+Abbrevation.swift in Sources */,
 				1640E9821F7BCB1100156F37 /* CGSize+ScaleToFit.swift in Sources */,
 				1603A0DF1F7E77D1004D226F /* CollectionViewController.swift in Sources */,
 				16A1D20D1F7C3CF6000D76EC /* AppleCollectionViewLayout.swift in Sources */,
@@ -3197,7 +3229,6 @@
 				16E9F4871F7B0A1600A78E33 /* Array+Random.swift in Sources */,
 				16A8B6A71F7BFA7200D4471A /* AppleColor+Blend.swift in Sources */,
 				1603A0F01F7E7839004D226F /* Coordinator.swift in Sources */,
-				16A61AB51F9254DB003A9129 /* TimeZoneLocation+Moon.swift in Sources */,
 				1685E35C1F7BE4E7008FE932 /* SKEmitterNode+Unarchive.swift in Sources */,
 				161E28691F7E6927000CE260 /* CollectionView.swift in Sources */,
 				16F912F61F7D11740010C889 /* AppleViewController+Present.swift in Sources */,
@@ -3216,7 +3247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16A61AB11F924FC6003A9129 /* TimeZoneLocation+Sun_Tests.swift in Sources */,
+				16A61AB11F924FC6003A9129 /* TimeZoneLocation+Tests.swift in Sources */,
 				16A61AA81F922E82003A9129 /* String+JsonMinified_Tests.swift in Sources */,
 				16E9F4B21F7B0A2600A78E33 /* Array+Random_Tests.swift in Sources */,
 				16F859151F7E535600780B1C /* Object+UniqueIdentifier_Tests.swift in Sources */,
@@ -3224,6 +3255,7 @@
 				1687A5231F7B854D00456E62 /* Dictionary+UrlEscaped.swift in Sources */,
 				16E9F4B01F7B0A2600A78E33 /* Array+Unique_Tests.swift in Sources */,
 				16E9F4B11F7B0A2600A78E33 /* Array+Last_Tests.swift in Sources */,
+				164C28AA200E3B5C006779F3 /* CLLocation+SunTests.swift in Sources */,
 				1687A51E1F7B76B300456E62 /* Result_Tests.swift in Sources */,
 				1691BA271F7B8BB500B1FAB3 /* String+Initials.swift in Sources */,
 				1687A5281F7B858000456E62 /* String+UrlEscaped.swift in Sources */,
@@ -3311,7 +3343,6 @@
 				1640E9AF1F7BD22B00156F37 /* Data+DecodeJson.swift in Sources */,
 				16A8B6A31F7BF9CC00D4471A /* AppleColor+Hex.swift in Sources */,
 				1685E3631F7BE640008FE932 /* SKProduct+LocalizedPrice.swift in Sources */,
-				1685E3371F7BE01D008FE932 /* TimeZoneLocation+Sun.swift in Sources */,
 				1640E9A51F7BD0C000156F37 /* BlockOperation.swift in Sources */,
 				16A1D28F1F7C4488000D76EC /* ViewController.swift in Sources */,
 				1603A0D51F7E7518004D226F /* CollectionViewSection.swift in Sources */,
@@ -3378,6 +3409,8 @@
 				16A1D1EB1F7C37B2000D76EC /* AppleFont.swift in Sources */,
 				16F912F21F7D0F580010C889 /* AppleViewController+Alert.swift in Sources */,
 				16F858D01F7D1D1700780B1C /* PageViewController.swift in Sources */,
+				164C28A0200E3358006779F3 /* CLLocation+Sun.swift in Sources */,
+				164C28B0200E3D5F006779F3 /* TimeZone+Abbrevation.swift in Sources */,
 				1640E9831F7BCB1100156F37 /* CGSize+ScaleToFit.swift in Sources */,
 				1603A0E01F7E77D1004D226F /* CollectionViewController.swift in Sources */,
 				16A1D20E1F7C3CF6000D76EC /* AppleCollectionViewLayout.swift in Sources */,
@@ -3393,7 +3426,6 @@
 				16E9F4921F7B0A1600A78E33 /* Array+Random.swift in Sources */,
 				16A8B6A81F7BFA7200D4471A /* AppleColor+Blend.swift in Sources */,
 				1603A0F11F7E7839004D226F /* Coordinator.swift in Sources */,
-				16A61AB61F9254DB003A9129 /* TimeZoneLocation+Moon.swift in Sources */,
 				1685E35D1F7BE4E7008FE932 /* SKEmitterNode+Unarchive.swift in Sources */,
 				161E286A1F7E6927000CE260 /* CollectionView.swift in Sources */,
 				16F912F71F7D11740010C889 /* AppleViewController+Present.swift in Sources */,
