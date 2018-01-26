@@ -34,7 +34,7 @@
         public var size: SizeBlock?
         public var callback: CallbackBlock?
 
-        public init(_ data: Data, config: ConfigBlock?, size: SizeBlock?, callback: CallbackBlock?) {
+        public init(_ data: Data, config: ConfigBlock? = nil, size: SizeBlock? = nil, callback: CallbackBlock? = nil) {
             self.data = data
             self.config = config
             self.size = size
@@ -42,15 +42,7 @@
 
             self.initialize()
         }
-
-        public convenience init(_ data: Data, config: ConfigBlock?, size: SizeBlock?) {
-            self.init(data, config: config, size: size, callback: nil)
-        }
-
-        public convenience init(_ data: Data) {
-            self.init(data, config: nil, size: nil, callback: nil)
-        }
-
+        
         open func initialize() {
 
         }
