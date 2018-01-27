@@ -6,7 +6,7 @@
 //  Copyright © 2017. Tibor Bödecs. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(watchOS)
 
 import CoreGraphics.CGPDFPage
 import UIKit.UIGraphics
