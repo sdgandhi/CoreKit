@@ -16,7 +16,7 @@
         func callback(index: Int)
     }
 
-    open class ViewModel<View, Model>: WKViewModelProtocol where View: WKInterfaceTableItem, Model: Any {
+    open class WKViewModel<View, Model>: WKViewModelProtocol where View: WKInterfaceTableItem, Model: Any {
         
         public var type: String { return View.objectName }
         public var view: View.Type { return View.self }
