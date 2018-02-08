@@ -175,6 +175,10 @@
 		1655D66A1F8F6BAA00127471 /* AppleNib+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655D6681F8F6BAA00127471 /* AppleNib+Identifier.swift */; };
 		1655D66B1F8F6BAA00127471 /* AppleNib+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655D6681F8F6BAA00127471 /* AppleNib+Identifier.swift */; };
 		1655D66C1F8F6BAA00127471 /* AppleNib+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655D6681F8F6BAA00127471 /* AppleNib+Identifier.swift */; };
+		16589DCA202C7ECD001B64FA /* String+CapitalizedFirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691BA2C1F7B8C9500B1FAB3 /* String+CapitalizedFirstCharacter.swift */; };
+		16589DCB202C7ECE001B64FA /* String+CapitalizedFirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691BA2C1F7B8C9500B1FAB3 /* String+CapitalizedFirstCharacter.swift */; };
+		16589DCC202C7ECF001B64FA /* String+CapitalizedFirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691BA2C1F7B8C9500B1FAB3 /* String+CapitalizedFirstCharacter.swift */; };
+		16589DCD202C7ED0001B64FA /* String+CapitalizedFirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691BA2C1F7B8C9500B1FAB3 /* String+CapitalizedFirstCharacter.swift */; };
 		165988461F7C0969001135AD /* AppleBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165988451F7C0969001135AD /* AppleBezierPath.swift */; };
 		165988471F7C0969001135AD /* AppleBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165988451F7C0969001135AD /* AppleBezierPath.swift */; };
 		165988481F7C0969001135AD /* AppleBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165988451F7C0969001135AD /* AppleBezierPath.swift */; };
@@ -293,9 +297,6 @@
 		1691BA251F7B8BB500B1FAB3 /* String+Initials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691BA241F7B8BB500B1FAB3 /* String+Initials.swift */; };
 		1691BA261F7B8BB500B1FAB3 /* String+Initials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691BA241F7B8BB500B1FAB3 /* String+Initials.swift */; };
 		1691BA271F7B8BB500B1FAB3 /* String+Initials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691BA241F7B8BB500B1FAB3 /* String+Initials.swift */; };
-		1691BA2D1F7B8C9500B1FAB3 /* String+CapitalizedFirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691BA2C1F7B8C9500B1FAB3 /* String+CapitalizedFirstCharacter.swift */; };
-		1691BA2E1F7B8C9500B1FAB3 /* String+CapitalizedFirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691BA2C1F7B8C9500B1FAB3 /* String+CapitalizedFirstCharacter.swift */; };
-		1691BA2F1F7B8C9500B1FAB3 /* String+CapitalizedFirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691BA2C1F7B8C9500B1FAB3 /* String+CapitalizedFirstCharacter.swift */; };
 		1691BA311F7B8E2200B1FAB3 /* String+CapitalizedFirstCharacter_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691BA301F7B8E2200B1FAB3 /* String+CapitalizedFirstCharacter_Tests.swift */; };
 		1691BA321F7B8E2200B1FAB3 /* String+CapitalizedFirstCharacter_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691BA301F7B8E2200B1FAB3 /* String+CapitalizedFirstCharacter_Tests.swift */; };
 		1691BA331F7B8E2200B1FAB3 /* String+CapitalizedFirstCharacter_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691BA301F7B8E2200B1FAB3 /* String+CapitalizedFirstCharacter_Tests.swift */; };
@@ -2730,6 +2731,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16589DCA202C7ECD001B64FA /* String+CapitalizedFirstCharacter.swift in Sources */,
 				1603A0E31F7E780E004D226F /* Grid.swift in Sources */,
 				167EEF511FEE46FC00449A32 /* String+Data.swift in Sources */,
 				16A98F241F7B993C00CBADCB /* Operation+Recursive.swift in Sources */,
@@ -2917,7 +2919,6 @@
 				1687A5261F7B858000456E62 /* String+UrlEscaped.swift in Sources */,
 				16E9F4A51F7B0A2400A78E33 /* Array+Element_Tests.swift in Sources */,
 				16E9F4A91F7B0A2400A78E33 /* Enum+Collection_Tests.swift in Sources */,
-				1691BA2D1F7B8C9500B1FAB3 /* String+CapitalizedFirstCharacter.swift in Sources */,
 				16E9F4AA1F7B0A2400A78E33 /* ExpressibleByIntegerLiteral+Random_Tests.swift in Sources */,
 				16E9F4AE1F7B0A2400A78E33 /* FloatingPoint+Random_Tests.swift in Sources */,
 				1687A52A1F7B87CB00456E62 /* String+UrlEscaped_Tests.swift in Sources */,
@@ -2934,6 +2935,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16589DCB202C7ECE001B64FA /* String+CapitalizedFirstCharacter.swift in Sources */,
 				16A98F251F7B993C00CBADCB /* Operation+Recursive.swift in Sources */,
 				167EEF521FEE46FC00449A32 /* String+Data.swift in Sources */,
 				16E9F47A1F7B0A1500A78E33 /* Blocks.swift in Sources */,
@@ -3121,7 +3123,6 @@
 				1687A5271F7B858000456E62 /* String+UrlEscaped.swift in Sources */,
 				16E9F49B1F7B0A2300A78E33 /* Array+Element_Tests.swift in Sources */,
 				16E9F49F1F7B0A2300A78E33 /* Enum+Collection_Tests.swift in Sources */,
-				1691BA2E1F7B8C9500B1FAB3 /* String+CapitalizedFirstCharacter.swift in Sources */,
 				16E9F4A01F7B0A2300A78E33 /* ExpressibleByIntegerLiteral+Random_Tests.swift in Sources */,
 				16E9F4A41F7B0A2300A78E33 /* FloatingPoint+Random_Tests.swift in Sources */,
 				1687A52B1F7B87CB00456E62 /* String+UrlEscaped_Tests.swift in Sources */,
@@ -3138,6 +3139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16589DCC202C7ECF001B64FA /* String+CapitalizedFirstCharacter.swift in Sources */,
 				16A98F261F7B993C00CBADCB /* Operation+Recursive.swift in Sources */,
 				167EEF531FEE46FC00449A32 /* String+Data.swift in Sources */,
 				16E9F4851F7B0A1600A78E33 /* Blocks.swift in Sources */,
@@ -3325,7 +3327,6 @@
 				1687A5281F7B858000456E62 /* String+UrlEscaped.swift in Sources */,
 				16E9F4AF1F7B0A2600A78E33 /* Array+Element_Tests.swift in Sources */,
 				16E9F4B31F7B0A2600A78E33 /* Enum+Collection_Tests.swift in Sources */,
-				1691BA2F1F7B8C9500B1FAB3 /* String+CapitalizedFirstCharacter.swift in Sources */,
 				16E9F4B41F7B0A2600A78E33 /* ExpressibleByIntegerLiteral+Random_Tests.swift in Sources */,
 				16E9F4B81F7B0A2600A78E33 /* FloatingPoint+Random_Tests.swift in Sources */,
 				1687A52C1F7B87CB00456E62 /* String+UrlEscaped_Tests.swift in Sources */,
@@ -3342,6 +3343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16589DCD202C7ED0001B64FA /* String+CapitalizedFirstCharacter.swift in Sources */,
 				16A98F271F7B993C00CBADCB /* Operation+Recursive.swift in Sources */,
 				167EEF541FEE46FC00449A32 /* String+Data.swift in Sources */,
 				16E9F4901F7B0A1600A78E33 /* Blocks.swift in Sources */,
