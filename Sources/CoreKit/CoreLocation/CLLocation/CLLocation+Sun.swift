@@ -6,6 +6,7 @@
 //  Copyright © 2018. Tibor Bödecs. All rights reserved.
 //
 
+#if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
 import CoreLocation
 
 /**
@@ -178,3 +179,4 @@ public extension CLLocation {
         ]
     }
 }
+#endif
