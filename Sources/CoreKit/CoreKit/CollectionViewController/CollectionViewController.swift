@@ -14,7 +14,7 @@
     import UIKit.UITraitCollection
     #endif
 
-    open class CollectionViewController: AppleViewController {
+    open class CollectionViewController: ViewController {
 
         @IBOutlet open weak var collectionView: CollectionView!
 
