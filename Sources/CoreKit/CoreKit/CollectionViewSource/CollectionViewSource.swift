@@ -230,28 +230,28 @@
         // MARK: AppleScrollViewDelegate
 
         #if os(iOS)
-        public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        public func scrollViewDidScroll(_ scrollView: AppleScrollView) {
             guard let collectionView = scrollView as? CollectionView else {
                 return
             }
             collectionView.scrollViewDelegate?.scrollViewDidScroll?(scrollView)
         }
         
-        public func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        public func scrollViewDidZoom(_ scrollView: AppleScrollView) {
             guard let collectionView = scrollView as? CollectionView else {
                 return
             }
             collectionView.scrollViewDelegate?.scrollViewDidZoom?(scrollView)
         }
         
-        public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        public func scrollViewWillBeginDragging(_ scrollView: AppleScrollView) {
             guard let collectionView = scrollView as? CollectionView else {
                 return
             }
             collectionView.scrollViewDelegate?.scrollViewWillBeginDragging?(scrollView)
         }
         
-        public func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+        public func scrollViewWillEndDragging(_ scrollView: AppleScrollView,
                                               withVelocity velocity: CGPoint,
                                               targetContentOffset: UnsafeMutablePointer<CGPoint>) {
             guard let collectionView = scrollView as? CollectionView else {
@@ -262,63 +262,67 @@
                                                                           targetContentOffset: targetContentOffset)
         }
         
-        public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        public func scrollViewDidEndDragging(_ scrollView: AppleScrollView, willDecelerate decelerate: Bool) {
             guard let collectionView = scrollView as? CollectionView else {
                 return
             }
             collectionView.scrollViewDelegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
         }
         
-        public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        public func scrollViewWillBeginDecelerating(_ scrollView: AppleScrollView) {
             guard let collectionView = scrollView as? CollectionView else {
                 return
             }
             collectionView.scrollViewDelegate?.scrollViewWillBeginDecelerating?(scrollView)
         }
         
-        public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        public func scrollViewDidEndDecelerating(_ scrollView: AppleScrollView) {
             guard let collectionView = scrollView as? CollectionView else {
                 return
             }
             collectionView.scrollViewDelegate?.scrollViewDidEndDecelerating?(scrollView)
         }
         
-        public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        public func scrollViewDidEndScrollingAnimation(_ scrollView: AppleScrollView) {
             guard let collectionView = scrollView as? CollectionView else {
                 return
             }
             collectionView.scrollViewDelegate?.scrollViewDidEndScrollingAnimation?(scrollView)
         }
         
-        public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        public func viewForZooming(in scrollView: AppleScrollView) -> AppleView? {
             guard let collectionView = scrollView as? CollectionView else {
                 return nil
             }
             return collectionView.scrollViewDelegate?.viewForZooming?(in: scrollView)
         }
         
-        public func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        public func scrollViewWillBeginZooming(_ scrollView: AppleScrollView, with view: AppleView?) {
             guard let collectionView = scrollView as? CollectionView else {
                 return
             }
             collectionView.scrollViewDelegate?.scrollViewWillBeginZooming?(scrollView, with: view)
         }
         
-        public func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        public func scrollViewDidEndZooming(_ scrollView: AppleScrollView,
+                                            with view: AppleView?,
+                                            atScale scale: CGFloat) {
             guard let collectionView = scrollView as? CollectionView else {
                 return
             }
-            collectionView.scrollViewDelegate?.scrollViewDidEndZooming?(scrollView, with: view, atScale: scale)
+            collectionView.scrollViewDelegate?.scrollViewDidEndZooming?(scrollView,
+                                                                        with: view,
+                                                                        atScale: scale)
         }
         
-        public func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+        public func scrollViewShouldScrollToTop(_ scrollView: AppleScrollView) -> Bool {
             guard let collectionView = scrollView as? CollectionView else {
                 return true
             }
             return collectionView.scrollViewDelegate?.scrollViewShouldScrollToTop?(scrollView) ?? true
         }
         
-        public func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        public func scrollViewDidScrollToTop(_ scrollView: AppleScrollView) {
             guard let collectionView = scrollView as? CollectionView else {
                 return
             }
@@ -326,7 +330,7 @@
         }
         
         @available(iOSApplicationExtension 11.0, *)
-        public func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
+        public func scrollViewDidChangeAdjustedContentInset(_ scrollView: AppleScrollView) {
             guard let collectionView = scrollView as? CollectionView else {
                 return
             }
