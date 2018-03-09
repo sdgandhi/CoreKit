@@ -10,15 +10,12 @@
 
     open class CollectionView: AppleCollectionView {
 
-//        open var scrollViewDelegate: AppleScrollViewDelegate?
-
-//        open var scrollView: AppleScrollView? {
-//            return self.subviews.filter { $0 is AppleScrollView }.first as? AppleScrollView
-//        }
-
+        #if os(iOS)
+        open var scrollViewDelegate: AppleScrollViewDelegate?
+        #endif
+        
         open var source: CollectionViewSource? = nil {
             didSet {
-
                 self.source?.register(itemsFor: self)
 
                 self.dataSource = self.source

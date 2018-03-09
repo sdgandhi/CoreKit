@@ -226,6 +226,113 @@
             //        (item as! CollectionViewItem).setHighlight(false)
         }
         #endif
+        
+        // MARK: AppleScrollViewDelegate
+
+        #if os(iOS)
+        public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            guard let collectionView = scrollView as? CollectionView else {
+                return
+            }
+            collectionView.scrollViewDelegate?.scrollViewDidScroll?(scrollView)
+        }
+        
+        public func scrollViewDidZoom(_ scrollView: UIScrollView) {
+            guard let collectionView = scrollView as? CollectionView else {
+                return
+            }
+            collectionView.scrollViewDelegate?.scrollViewDidZoom?(scrollView)
+        }
+        
+        public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+            guard let collectionView = scrollView as? CollectionView else {
+                return
+            }
+            collectionView.scrollViewDelegate?.scrollViewWillBeginDragging?(scrollView)
+        }
+        
+        public func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                              withVelocity velocity: CGPoint,
+                                              targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+            guard let collectionView = scrollView as? CollectionView else {
+                return
+            }
+            collectionView.scrollViewDelegate?.scrollViewWillEndDragging?(scrollView,
+                                                                          withVelocity: velocity,
+                                                                          targetContentOffset: targetContentOffset)
+        }
+        
+        public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+            guard let collectionView = scrollView as? CollectionView else {
+                return
+            }
+            collectionView.scrollViewDelegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
+        }
+        
+        public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+            guard let collectionView = scrollView as? CollectionView else {
+                return
+            }
+            collectionView.scrollViewDelegate?.scrollViewWillBeginDecelerating?(scrollView)
+        }
+        
+        public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+            guard let collectionView = scrollView as? CollectionView else {
+                return
+            }
+            collectionView.scrollViewDelegate?.scrollViewDidEndDecelerating?(scrollView)
+        }
+        
+        public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+            guard let collectionView = scrollView as? CollectionView else {
+                return
+            }
+            collectionView.scrollViewDelegate?.scrollViewDidEndScrollingAnimation?(scrollView)
+        }
+        
+        public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+            guard let collectionView = scrollView as? CollectionView else {
+                return nil
+            }
+            return collectionView.scrollViewDelegate?.viewForZooming?(in: scrollView)
+        }
+        
+        public func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+            guard let collectionView = scrollView as? CollectionView else {
+                return
+            }
+            collectionView.scrollViewDelegate?.scrollViewWillBeginZooming?(scrollView, with: view)
+        }
+        
+        public func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+            guard let collectionView = scrollView as? CollectionView else {
+                return
+            }
+            collectionView.scrollViewDelegate?.scrollViewDidEndZooming?(scrollView, with: view, atScale: scale)
+        }
+        
+        public func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+            guard let collectionView = scrollView as? CollectionView else {
+                return true
+            }
+            return collectionView.scrollViewDelegate?.scrollViewShouldScrollToTop?(scrollView) ?? true
+        }
+        
+        public func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+            guard let collectionView = scrollView as? CollectionView else {
+                return
+            }
+            collectionView.scrollViewDelegate?.scrollViewDidScrollToTop?(scrollView)
+        }
+        
+        @available(iOSApplicationExtension 11.0, *)
+        public func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
+            guard let collectionView = scrollView as? CollectionView else {
+                return
+            }
+            collectionView.scrollViewDelegate?.scrollViewDidChangeAdjustedContentInset?(scrollView)
+        }
+        #endif
     }
 
     extension CollectionViewSource: AppleCollectionViewDelegateFlowLayout {
@@ -291,5 +398,8 @@
             return data.size(data: data.value, indexPath: indexPath, grid: self.grid(section))
         }
     }
+    
+    
 
 #endif
+
