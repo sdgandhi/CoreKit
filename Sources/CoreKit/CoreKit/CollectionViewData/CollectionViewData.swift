@@ -16,29 +16,29 @@
         var value: Any { get }
 
         func config(item: CollectionViewItem, data: Any, indexPath: AppleIndexPath, grid: Grid)
-        func size(data: Any, indexPath: AppleIndexPath, grid: Grid) -> CGSize
+        func size(data: Any, indexPath: AppleIndexPath, grid: Grid, view: AppleView) -> CGSize
         func callback(data: Any, indexPath: AppleIndexPath) -> Bool
     }
 
     open class CollectionViewData<Item, Data>: CollectionViewDataProtocol where Item: CollectionViewItem, Data: Any {
 
         public typealias ConfigBlock = (Item, Data, AppleIndexPath, Grid) -> Void
-        public typealias SizeBlock = (Data, AppleIndexPath, Grid) -> CGSize
+        public typealias SizeBlock = (Data, AppleIndexPath, Grid, AppleView) -> CGSize
         public typealias CallbackBlock = (Data, AppleIndexPath) -> Bool
 
         public var item: CollectionViewItem.Type { return Item.self }
         public var value: Any { return self.data }
 
         public var data: Data
-        public var config: ConfigBlock?
-        public var size: SizeBlock?
-        public var callback: CallbackBlock?
+        public var configBlock: ConfigBlock?
+        public var sizeBlock: SizeBlock?
+        public var callbackBlock: CallbackBlock?
 
         public init(_ data: Data, config: ConfigBlock? = nil, size: SizeBlock? = nil, callback: CallbackBlock? = nil) {
             self.data = data
-            self.config = config
-            self.size = size
-            self.callback = callback
+            self.configBlock = config
+            self.sizeBlock = size
+            self.callbackBlock = callback
 
             self.initialize()
         }
@@ -51,7 +51,7 @@
             guard let data = data as? Data, let item = item as? Item else {
                 return
             }
-            if let config = self.config {
+            if let config = self.configBlock {
                 return config(item, data, indexPath, grid)
             }
             return self.config(item: item, data: data, indexPath: indexPath, grid: grid)
@@ -61,17 +61,17 @@
 
         }
 
-        public func size(data: Any, indexPath: AppleIndexPath, grid: Grid) -> CGSize {
+        public func size(data: Any, indexPath: AppleIndexPath, grid: Grid, view: AppleView) -> CGSize {
             guard let data = data as? Data else {
                 return .zero
             }
-            if let callback = self.size {
-                return callback(data, indexPath, grid)
+            if let callback = self.sizeBlock {
+                return callback(data, indexPath, grid, view)
             }
-            return self.size(data: data, indexPath: indexPath, grid: grid)
+            return self.size(data: data, indexPath: indexPath, grid: grid, view: view)
         }
 
-        open func size(data: Data, indexPath: AppleIndexPath, grid: Grid) -> CGSize {
+        open func size(data: Data, indexPath: AppleIndexPath, grid: Grid, view: AppleView) -> CGSize {
             return .zero
         }
 
@@ -79,7 +79,7 @@
             guard let data = data as? Data else {
                 return false
             }
-            if let callback = self.callback {
+            if let callback = self.callbackBlock {
                 return callback(data, indexPath)
             }
             return self.callback(data: data, indexPath: indexPath)

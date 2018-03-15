@@ -351,35 +351,27 @@
             guard let data = self.itemAt(indexPath) else {
                 return .zero
             }
-            return data.size(data: data.value, indexPath: indexPath, grid: self.grid(indexPath.section))
+            let grid = self.grid(indexPath.section)
+            
+            return data.size(data: data.value, indexPath: indexPath, grid: grid, view: collectionView)
         }
 
         public func collectionView(_ collectionView: AppleCollectionView,
                                    layout collectionViewLayout: AppleCollectionViewLayout,
                                    insetForSectionAt section: Int) -> AppleEdgeInsets {
-            if let insets = self.grid(section).insets {
-                return insets
-            }
-            let margin = self.grid(section).margin
-            return AppleEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
+            return self.grid(section).margin
         }
 
         public func collectionView(_ collectionView: AppleCollectionView,
                                    layout collectionViewLayout: AppleCollectionViewLayout,
                                    minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-            if let spacing = self.grid(section).lineSpacing {
-                return spacing
-            }
-            return self.grid(section).padding
+            return self.grid(section).verticalPadding
         }
 
         public func collectionView(_ collectionView: AppleCollectionView,
                                    layout collectionViewLayout: AppleCollectionViewLayout,
                                    minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-            if let spacing = self.grid(section).itemSpacing {
-                return spacing
-            }
-            return self.grid(section).padding
+            return self.grid(section).horizontalPadding
         }
 
         public func collectionView(_ collectionView: AppleCollectionView,
@@ -389,7 +381,8 @@
                 return .zero
             }
             let indexPath = AppleIndexPath(item: -1, section: section)
-            return data.size(data: data.value, indexPath: indexPath, grid: self.grid(section))
+            let grid = self.grid(section)
+            return data.size(data: data.value, indexPath: indexPath, grid: grid, view: collectionView)
         }
 
         public func collectionView(_ collectionView: AppleCollectionView,
@@ -399,7 +392,8 @@
                 return .zero
             }
             let indexPath = AppleIndexPath(item: -1, section: section)
-            return data.size(data: data.value, indexPath: indexPath, grid: self.grid(section))
+            let grid = self.grid(section)
+            return data.size(data: data.value, indexPath: indexPath, grid: grid, view: collectionView)
         }
     }
     

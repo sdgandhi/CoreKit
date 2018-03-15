@@ -10,89 +10,58 @@
 
     import CoreGraphics
 
-    #if os(iOS) || os(tvOS)
-    import UIKit.UITraitCollection
-    #endif
-
     open class Grid {
 
-        private weak var view: AppleView!
-
-        open var screenSize: CGSize = AppleScreen.default.bounds.size
-
-        open var size: CGSize { return self.view.bounds.size }
-
-        open var columns: CGFloat = 1
-        open var margin: CGFloat = 0
-        open var padding: CGFloat = 0
-
-        open var insets: AppleEdgeInsets?
-        open var lineSpacing: CGFloat?
-        open var itemSpacing: CGFloat?
-
-        public init(view: AppleView) {
-            self.view = view
+        open var columns: CGFloat
+        open var margin: AppleEdgeInsets
+        open var padding: AppleEdgeInsets
+        
+        public var verticalMargin: CGFloat {
+            return self.margin.top + self.margin.bottom
+        }
+        
+        public var horizontalMargin: CGFloat {
+            return self.margin.left + self.margin.right
         }
 
-        #if os(iOS) || os(tvOS)
-        open weak var traitCollection: UITraitCollection!
-
-        public init(view: AppleView, traitCollection: UITraitCollection? = nil) {
-            self.view = view
-            self.traitCollection = traitCollection ?? view.traitCollection
+        // line spacing
+        public var verticalPadding: CGFloat {
+            return self.padding.top + self.padding.bottom
+        }
+        
+        // inter item spacing
+        public var horizontalPadding: CGFloat {
+            return self.padding.left + self.padding.right
         }
 
-        open var isSmallPortraitScreen: Bool {
-            return self.traitCollection.horizontalSizeClass == .compact &&
-                self.traitCollection.verticalSizeClass == .regular
-        }
-        #endif
-
-        open func size(ratio: CGFloat,
-                       numberOfItems: CGFloat = 1,
-                       padding: CGFloat = 0,
-                       columns: CGFloat? = nil,
-                       leftInset: Bool = true,
-                       rightInset: Bool = true) -> CGSize
-        {
-            let size = self.width(numberOfItems, padding: padding, columns: columns)
-            return CGSize(width: size, height: size * ratio)
+        public init(columns: CGFloat = 1, margin: AppleEdgeInsets = .zero, padding: AppleEdgeInsets = .zero) {
+            self.columns = columns
+            self.margin = margin
+            self.padding = padding
         }
 
-        open func size(height: CGFloat,
-                       numberOfItems: CGFloat = 1,
-                       padding: CGFloat = 0,
-                       columns: CGFloat? = nil,
-                       leftInset: Bool = true,
-                       rightInset: Bool = true) -> CGSize {
-            let size = self.width(numberOfItems, padding: padding, columns: columns)
-            return CGSize(width: size, height: height)
+        open func size(for view: AppleView, ratio: CGFloat, items: CGFloat = 1, gaps: CGFloat? = nil) -> CGSize {
+            let size = self.width(for: view, items: items, gaps: gaps)
+            return CGSize(width: size, height: (size * ratio).evenRounded)
         }
 
-        open func width(_ size: CGFloat = 1,
-                        padding: CGFloat = 0,
-                        columns: CGFloat? = nil,
-                        leftInset: Bool = true,
-                        rightInset: Bool = true) -> CGFloat {
-            var cols = self.columns
-            if let c = columns {
-                cols = c
+        open func size(for view: AppleView, height: CGFloat, items: CGFloat = 1, gaps: CGFloat? = nil) -> CGSize {
+            let size = self.width(for: view, items: items, gaps: gaps)
+
+            var height = height
+            if height < 0 {
+                height = view.bounds.size.height - height
             }
-            var leftMargin = (self.insets?.left ?? self.margin)
-            if !leftInset {
-                leftMargin = 0
-            }
-            var rightMargin = (self.insets?.right ?? self.margin)
-            if !rightInset {
-                rightMargin = 0
-            }
-            let itemSpacing = (self.itemSpacing ?? self.padding)
-
-            let width = self.view.bounds.size.width - leftMargin - rightMargin - padding * itemSpacing
-
-            return width / cols * size
+            return CGSize(width: size, height: height.evenRounded)
         }
 
+        open func width(for view: AppleView, items: CGFloat = 1, gaps: CGFloat? = nil) -> CGFloat {
+            let gaps = gaps ?? items - 1
+
+            let width = view.bounds.size.width - self.horizontalMargin - self.horizontalPadding * gaps
+
+            return (width / self.columns * items).evenRounded
+        }
     }
 
 #endif

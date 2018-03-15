@@ -311,6 +311,14 @@
 		1692CE1F1F8F77A7008C7455 /* AppleViewController+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1692CE1D1F8F77A7008C7455 /* AppleViewController+Init.swift */; };
 		1692CE201F8F77A7008C7455 /* AppleViewController+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1692CE1D1F8F77A7008C7455 /* AppleViewController+Init.swift */; };
 		1692CE211F8F77A7008C7455 /* AppleViewController+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1692CE1D1F8F77A7008C7455 /* AppleViewController+Init.swift */; };
+		1695154A205A5444001C2533 /* AppleEdgeInsets+Setters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16951549205A5444001C2533 /* AppleEdgeInsets+Setters.swift */; };
+		1695154B205A5444001C2533 /* AppleEdgeInsets+Setters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16951549205A5444001C2533 /* AppleEdgeInsets+Setters.swift */; };
+		1695154C205A5444001C2533 /* AppleEdgeInsets+Setters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16951549205A5444001C2533 /* AppleEdgeInsets+Setters.swift */; };
+		1695154D205A5444001C2533 /* AppleEdgeInsets+Setters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16951549205A5444001C2533 /* AppleEdgeInsets+Setters.swift */; };
+		1695154F205A5896001C2533 /* CGFloat+EvenRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1695154E205A5896001C2533 /* CGFloat+EvenRounded.swift */; };
+		16951550205A5896001C2533 /* CGFloat+EvenRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1695154E205A5896001C2533 /* CGFloat+EvenRounded.swift */; };
+		16951551205A5896001C2533 /* CGFloat+EvenRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1695154E205A5896001C2533 /* CGFloat+EvenRounded.swift */; };
+		16951552205A5896001C2533 /* CGFloat+EvenRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1695154E205A5896001C2533 /* CGFloat+EvenRounded.swift */; };
 		16A1D1AF1F7C2CB5000D76EC /* AppleNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A1D1AE1F7C2CB5000D76EC /* AppleNib.swift */; };
 		16A1D1B01F7C2CB5000D76EC /* AppleNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A1D1AE1F7C2CB5000D76EC /* AppleNib.swift */; };
 		16A1D1B11F7C2CB5000D76EC /* AppleNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A1D1AE1F7C2CB5000D76EC /* AppleNib.swift */; };
@@ -858,6 +866,8 @@
 		1691BA341F7B8F7300B1FAB3 /* String+Initials_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Initials_Tests.swift"; sourceTree = "<group>"; };
 		1691BA3B1F7B910500B1FAB3 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		1692CE1D1F8F77A7008C7455 /* AppleViewController+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppleViewController+Init.swift"; sourceTree = "<group>"; };
+		16951549205A5444001C2533 /* AppleEdgeInsets+Setters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppleEdgeInsets+Setters.swift"; sourceTree = "<group>"; };
+		1695154E205A5896001C2533 /* CGFloat+EvenRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+EvenRounded.swift"; sourceTree = "<group>"; };
 		16A1D1AE1F7C2CB5000D76EC /* AppleNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleNib.swift; sourceTree = "<group>"; };
 		16A1D1B91F7C2E2A000D76EC /* AppleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScreen.swift; sourceTree = "<group>"; };
 		16A1D1BF1F7C2F15000D76EC /* AppleEdgeInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleEdgeInsets.swift; sourceTree = "<group>"; };
@@ -1200,6 +1210,7 @@
 			isa = PBXGroup;
 			children = (
 				1640E95F1F7BC6C600156F37 /* CGFloat+Scale.swift */,
+				1695154E205A5896001C2533 /* CGFloat+EvenRounded.swift */,
 			);
 			path = CGFloat;
 			sourceTree = "<group>";
@@ -1653,6 +1664,7 @@
 			children = (
 				16A1D1BF1F7C2F15000D76EC /* AppleEdgeInsets.swift */,
 				16A1D1C41F7C32DE000D76EC /* AppleEdgeInsets+Init.swift */,
+				16951549205A5444001C2533 /* AppleEdgeInsets+Setters.swift */,
 			);
 			path = EdgeInsets;
 			sourceTree = "<group>";
@@ -2803,6 +2815,7 @@
 				16A1D1F91F7C39BA000D76EC /* AppleWindowController+Crossfade.swift in Sources */,
 				16E9F4761F7B0A1400A78E33 /* Bool+Random.swift in Sources */,
 				16F858BB1F7D16A800780B1C /* View.swift in Sources */,
+				1695154F205A5896001C2533 /* CGFloat+EvenRounded.swift in Sources */,
 				167EEF561FEE471B00449A32 /* Random.swift in Sources */,
 				16E9E0831F8269F3008175C0 /* AppleIndexPath.swift in Sources */,
 				16A98F1A1F7B982000CBADCB /* URLSessionTask+StartStop.swift in Sources */,
@@ -2877,6 +2890,7 @@
 				1640E9541F7BC65500156F37 /* FloatingPoint+RandomSignal.swift in Sources */,
 				16A8B6AF1F7BFC6F00D4471A /* AppleColor+Init.swift in Sources */,
 				161E28531F7E6206000CE260 /* AppleCollectionViewItem+Reuse.swift in Sources */,
+				1695154A205A5444001C2533 /* AppleEdgeInsets+Setters.swift in Sources */,
 				16F913081F7D146D0010C889 /* AppleView+MotionEffect.swift in Sources */,
 				16D38C0A1F8F644A0075B8A9 /* AppleCollectionView+Reuse.swift in Sources */,
 				16A1D2111F7C3D56000D76EC /* AppleCollectionViewLayoutAttributes.swift in Sources */,
@@ -3007,6 +3021,7 @@
 				1640E9A31F7BD0C000156F37 /* BlockOperation.swift in Sources */,
 				16A1D28D1F7C4488000D76EC /* ViewController.swift in Sources */,
 				1603A0D31F7E7518004D226F /* CollectionViewSection.swift in Sources */,
+				16951550205A5896001C2533 /* CGFloat+EvenRounded.swift in Sources */,
 				167EEF571FEE471B00449A32 /* Random.swift in Sources */,
 				16A1D1FA1F7C39BA000D76EC /* AppleWindowController+Crossfade.swift in Sources */,
 				16E9F4811F7B0A1500A78E33 /* Bool+Random.swift in Sources */,
@@ -3081,6 +3096,7 @@
 				16A1D20C1F7C3CF6000D76EC /* AppleCollectionViewLayout.swift in Sources */,
 				1640E9551F7BC65500156F37 /* FloatingPoint+RandomSignal.swift in Sources */,
 				16D4616A1F82D05F00B89924 /* AppleCollectionViewItem.swift in Sources */,
+				1695154B205A5444001C2533 /* AppleEdgeInsets+Setters.swift in Sources */,
 				16A8B6B01F7BFC6F00D4471A /* AppleColor+Init.swift in Sources */,
 				16D38C0B1F8F644A0075B8A9 /* AppleCollectionView+Reuse.swift in Sources */,
 				16F913091F7D146D0010C889 /* AppleView+MotionEffect.swift in Sources */,
@@ -3211,6 +3227,7 @@
 				1640E9A41F7BD0C000156F37 /* BlockOperation.swift in Sources */,
 				16A1D28E1F7C4488000D76EC /* ViewController.swift in Sources */,
 				1603A0D41F7E7518004D226F /* CollectionViewSection.swift in Sources */,
+				16951551205A5896001C2533 /* CGFloat+EvenRounded.swift in Sources */,
 				167EEF581FEE471B00449A32 /* Random.swift in Sources */,
 				16A1D1FB1F7C39BA000D76EC /* AppleWindowController+Crossfade.swift in Sources */,
 				16E9F48C1F7B0A1600A78E33 /* Bool+Random.swift in Sources */,
@@ -3285,6 +3302,7 @@
 				16A1D20D1F7C3CF6000D76EC /* AppleCollectionViewLayout.swift in Sources */,
 				1640E9561F7BC65500156F37 /* FloatingPoint+RandomSignal.swift in Sources */,
 				16D4616B1F82D06000B89924 /* AppleCollectionViewItem.swift in Sources */,
+				1695154C205A5444001C2533 /* AppleEdgeInsets+Setters.swift in Sources */,
 				16A8B6B11F7BFC6F00D4471A /* AppleColor+Init.swift in Sources */,
 				16D38C0C1F8F644A0075B8A9 /* AppleCollectionView+Reuse.swift in Sources */,
 				16F9130A1F7D146D0010C889 /* AppleView+MotionEffect.swift in Sources */,
@@ -3415,6 +3433,7 @@
 				1640E9A51F7BD0C000156F37 /* BlockOperation.swift in Sources */,
 				16A1D28F1F7C4488000D76EC /* ViewController.swift in Sources */,
 				1603A0D51F7E7518004D226F /* CollectionViewSection.swift in Sources */,
+				16951552205A5896001C2533 /* CGFloat+EvenRounded.swift in Sources */,
 				167EEF591FEE471B00449A32 /* Random.swift in Sources */,
 				16A1D1FC1F7C39BA000D76EC /* AppleWindowController+Crossfade.swift in Sources */,
 				16E9F4971F7B0A1600A78E33 /* Bool+Random.swift in Sources */,
@@ -3489,6 +3508,7 @@
 				16A1D20E1F7C3CF6000D76EC /* AppleCollectionViewLayout.swift in Sources */,
 				1640E9571F7BC65500156F37 /* FloatingPoint+RandomSignal.swift in Sources */,
 				16D4616C1F82D06000B89924 /* AppleCollectionViewItem.swift in Sources */,
+				1695154D205A5444001C2533 /* AppleEdgeInsets+Setters.swift in Sources */,
 				16A8B6B21F7BFC6F00D4471A /* AppleColor+Init.swift in Sources */,
 				16D38C0D1F8F644A0075B8A9 /* AppleCollectionView+Reuse.swift in Sources */,
 				16F9130B1F7D146D0010C889 /* AppleView+MotionEffect.swift in Sources */,

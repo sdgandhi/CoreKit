@@ -45,18 +45,13 @@
             guard
                 let previousTraitCollection = previousTraitCollection ,
                 self.traitCollection.verticalSizeClass != previousTraitCollection.verticalSizeClass ||
-                    self.traitCollection.horizontalSizeClass != previousTraitCollection.horizontalSizeClass
-                else {
-                    return
+                self.traitCollection.horizontalSizeClass != previousTraitCollection.horizontalSizeClass
+            else {
+                return
             }
 
-            for section in self.collectionView.source?.sections ?? [] {
-                section.grid?.traitCollection = self.traitCollection
-            }
-            self.collectionView.source?.grid.traitCollection = self.traitCollection
             self.collectionView.collectionViewLayout.invalidateLayout()
             self.collectionView.reloadData()
-
         }
 
         open override func viewWillTransition(to size: CGSize,
@@ -67,12 +62,7 @@
             self.collectionView.collectionViewLayout.invalidateLayout()
             self.collectionView.bounds.size = size
 
-            coordinator.animate(alongsideTransition: { [weak self] context in
-                for section in self?.collectionView.source?.sections ?? [] {
-                    section.grid?.traitCollection = self?.traitCollection
-                }
-                self?.collectionView.source?.grid.traitCollection = self?.traitCollection
-
+            coordinator.animate(alongsideTransition: { context in
                 context.viewController(forKey: UITransitionContextViewControllerKey.from)
 
                 }, completion: { [weak self] _ in
@@ -80,29 +70,6 @@
             })
         }
         #endif
-    }
-
-    public extension CollectionViewController {
-        public func grid(_ columns: CGFloat = 1,
-                         margin: CGFloat = 0,
-                         padding: CGFloat = 0,
-                         insets: AppleEdgeInsets? = nil,
-                         lineSpacing: CGFloat? = nil,
-                         itemSpacing: CGFloat?) -> Grid {
-
-            #if os(iOS)
-                let grid = Grid(view: self.collectionView, traitCollection: self.traitCollection)
-            #else
-                let grid = Grid(view: self.collectionView)
-            #endif
-            grid.columns = columns
-            grid.margin = margin
-            grid.padding = padding
-            grid.insets = insets
-            grid.lineSpacing = lineSpacing
-            grid.itemSpacing = itemSpacing
-            return grid
-        }
     }
 
 #endif
